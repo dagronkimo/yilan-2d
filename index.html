@@ -169,6 +169,31 @@ h2 .dot{width:18px;height:18px;border:var(--line);border-radius:50%;flex:none}
 .pk .pk-go{text-decoration:none;font-size:.8rem;border:2.5px solid var(--ink);border-radius:999px;padding:3px 10px;background:var(--sky);white-space:nowrap}
 .pk.off{opacity:.55}
 
+/* ---------- 行程編輯 ---------- */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.plan-ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;margin-bottom:14px;font-size:.9rem}
+.plan-ctl input[type=time]{font-family:inherit;font-size:.95rem;border:2.5px solid var(--ink);border-radius:10px;padding:2px 6px;background:var(--paper);color:var(--ink)}
+.pbtn{font-family:inherit;color:var(--ink);font-size:.85rem;border:2.5px solid var(--ink);border-radius:999px;padding:3px 12px;background:var(--yellow);cursor:pointer}
+.pbtn.ghost{background:var(--white)}
+.pbtn.mini{font-size:.75rem;padding:1px 9px;margin-left:6px;background:var(--white)}
+.cat-b{font-size:.72rem;border:2px solid var(--ink);border-radius:999px;padding:0 7px;background:var(--paper)}
+.warn{color:#3E3A39;background:#F2A497;border:2px solid var(--ink);border-radius:10px;padding:2px 8px;font-size:.82rem;display:inline-block}
+.row-ctl{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-top:8px;padding-top:8px;border-top:2px dashed #d8d2c8;font-size:.82rem}
+.row-ctl .stayc{display:inline-flex;align-items:center;gap:6px}
+.row-ctl .stayc b{font-weight:400;font-size:.95rem}
+.ic-btn{font-family:inherit;color:var(--ink);width:30px;height:30px;border:2.5px solid var(--ink);border-radius:50%;background:var(--white);cursor:pointer;font-size:.95rem;line-height:1}
+.ic-btn.del{background:var(--coral)}
+.ic-btn:disabled{opacity:.35;cursor:default}
+.pk{grid-template-columns:34px 1fr}
+.pk-main{min-width:0}
+.pk-act{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+.pk-btn{font-family:inherit;color:var(--ink);font-size:.8rem;border:2.5px solid var(--ink);border-radius:999px;padding:2px 10px;background:var(--white);cursor:pointer}
+.pk-btn.add{background:var(--green)}
+.pk-btn.in{background:var(--yellow)}
+.pk-btn.seen[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.pk-filters{display:flex;flex-wrap:wrap;gap:4px 16px}
+.pk .pk-go{text-decoration:none;font-size:.8rem;border:2.5px solid var(--ink);border-radius:999px;padding:2px 10px;background:var(--sky);margin-left:auto}
+
 footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
 
 /* ---------- 插圖動畫 ---------- */
@@ -276,7 +301,7 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
     </svg>
   </div>
   <h1>新竹出發<br>宜蘭 2 天 1 夜繪本旅</h1>
-  <p class="sub">2026/11/28（六）– 11/29（日）・礁溪 → 宜蘭市 → 三星 → 羅東 → 五結 → 頭城</p>
+  <p class="sub">2026/11/28（六）– 11/29（日）・新竹出發，礁溪 → 宜蘭市 → 三星 → 羅東 → 五結 → 頭城 → 回新竹</p>
   <div class="count" aria-live="polite">
     <div><b id="cd-d">--</b><span>天</span></div>
     <div><b id="cd-h">--</b><span>時</span></div>
@@ -295,18 +320,18 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
       <div class="route">
         <div class="ap"><b>新竹</b><small>出發<br>07:30</small></div>
         <svg viewBox="0 0 120 44" aria-hidden="true"><path d="M8 34 H38" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 6" stroke-linecap="round"/><path d="M40 38 V24 A20 20 0 0 1 80 24 V38Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M48 38 V26 A12 12 0 0 1 72 26 V38Z" fill="#3E3A39"/><path d="M82 34 H112" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 6" stroke-linecap="round"/></svg>
-        <div class="ap r"><b>礁溪</b><small>溫泉公園<br>約 09:20</small></div>
+        <div class="ap r"><b>礁溪</b><small>溫泉公園<br>約 09:25</small></div>
       </div>
       <div class="meta"><span>國 1／國 3 → 國 3 甲／北二高 → 國 5</span><span>約 1 小時 50 分</span></div>
     </article>
     <article class="card flight">
       <div class="top"><span class="pill" style="background:var(--green)">回程・11/29（日）</span><span class="pill">國 5・雪山隧道</span></div>
       <div class="route">
-        <div class="ap"><b>頭城</b><small>頭城交流道<br>15:40</small></div>
+        <div class="ap"><b>頭城</b><small>頭城交流道<br>約 14:55</small></div>
         <svg viewBox="0 0 120 44" aria-hidden="true"><path d="M8 34 H38" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 6" stroke-linecap="round"/><path d="M40 38 V24 A20 20 0 0 1 80 24 V38Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M48 38 V26 A12 12 0 0 1 72 26 V38Z" fill="#3E3A39"/><path d="M82 34 H112" fill="none" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 6" stroke-linecap="round"/></svg>
-        <div class="ap r"><b>新竹</b><small>到家<br>約 18:30</small></div>
+        <div class="ap r"><b>新竹</b><small>到家<br>約 16:45</small></div>
       </div>
-      <div class="meta"><span>週日下午北上雪隧常塞</span><span>順暢約 1.5 小時，尖峰 3 小時</span></div>
+      <div class="meta"><span>趕在週日下午車潮前北上</span><span>順暢約 1.5 小時，尖峰 3 小時</span></div>
     </article>
   </div>
 </section>
@@ -385,40 +410,40 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
       <g font-size="10.5" fill="#3E3A39" stroke="none">
         <rect x="110" y="4" width="124" height="44" rx="10" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
         <text x="118" y="21" font-size="11">國 5 雪隧↔新竹</text>
-        <text x="118" y="38">去 07:30・回 15:40</text>
+        <text x="118" y="38">去 07:30・回 14:55</text>
 
         <rect x="266" y="132" width="88" height="44" rx="10" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
-        <text x="273" y="149" font-size="11">① 09:20</text>
+        <text x="273" y="149" font-size="11">① 09:25</text>
         <text x="273" y="166">礁溪泡腳</text>
 
         <rect x="70" y="180" width="96" height="58" rx="10" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
         <text x="77" y="197" font-size="11">② 宜蘭市</text>
-        <text x="77" y="213">10:20 幾米</text>
-        <text x="77" y="229">11:30 午餐</text>
+        <text x="77" y="213">10:35 積木</text>
+        <text x="77" y="229">11:45 午餐</text>
 
         <rect x="4" y="244" width="80" height="44" rx="10" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
-        <text x="11" y="261" font-size="11">③ 13:00</text>
+        <text x="11" y="261" font-size="11">③ 13:05</text>
         <text x="11" y="278">張美阿嬤</text>
 
         <rect x="66" y="326" width="80" height="44" rx="10" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
-        <text x="73" y="343" font-size="11">④ 14:30</text>
+        <text x="73" y="343" font-size="11">④ 14:40</text>
         <text x="73" y="360">清水地熱</text>
 
         <rect x="150" y="296" width="98" height="58" rx="10" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
         <text x="157" y="313" font-size="11">⑤ 羅東</text>
-        <text x="157" y="329">16:00 林業</text>
-        <text x="157" y="345">18:00 夜市</text>
+        <text x="157" y="329">16:05 林業</text>
+        <text x="157" y="345">17:40 晚餐</text>
 
         <rect x="268" y="238" width="88" height="58" rx="10" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
         <text x="275" y="255" font-size="11">⑥ 綠舞住</text>
-        <text x="275" y="271">17:00 入住</text>
+        <text x="275" y="271">19:00 入住</text>
         <text x="275" y="287">⑦ D2 傳藝</text>
 
         <rect x="268" y="16" width="88" height="74" rx="10" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
         <text x="275" y="33" font-size="11">D2 頭城</text>
-        <text x="275" y="49">⑧ 13:30 館</text>
-        <text x="275" y="65">⑨ 15:10 餅</text>
-        <text x="275" y="81">15:40 回程</text>
+        <text x="275" y="49">⑧ 12:55 館</text>
+        <text x="275" y="65">⑨ 14:35 餅</text>
+        <text x="275" y="81">14:55 回程</text>
 
         <rect x="150" y="364" width="78" height="22" rx="11" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
         <text x="160" y="379" font-size="10">D1 粉紅線</text>
@@ -427,41 +452,47 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
       </g>
     </svg>
   </div>
-  <p class="map-note">示意圖，非實際比例；黃色小車沿第一天路線跑。⑦傳藝與⑧蘭陽博物館 Google 顯示週六休館，所以都排在週日。</p>
+  <p class="map-note">推薦路線示意圖，非實際比例。自己改行程後，請以下方真實地圖、導航和時間表為準（會自動更新）。</p>
 
   <h3 class="sched-title">真實地圖</h3>
   <div class="card real-map" id="realMap" role="region" aria-label="可縮放的真實地圖"></div>
-  <p class="map-note">可縮放、拖拉；點編號看時間並開啟 Google 導航。粉紅線第一天、黃線第二天，為大致路線。</p>
+  <p class="map-note">跟著「我的行程」即時更新。粉紅線第一天、黃色虛線第二天，「住」是綠舞。<button type="button" class="pbtn mini" id="fitMap">重新置中</button></p>
 
   <h3 class="sched-title">Google 地圖分段導航</h3>
-  <p class="map-note" style="margin-top:0">手機版 Google 地圖每段最多 3 個中途點，所以分段；到一段終點再點下一段。</p>
+  <p class="map-note" style="margin-top:0">依你的行程自動分段（手機版 Google 地圖每段最多 3 個中途點）；到一段終點再點下一段。第一段從新竹出發。</p>
   <div class="navs" id="navSegs"></div>
   <div class="stopnav" id="stopNav" aria-label="單站導航"></div>
 
-  <h3 class="sched-title">完整時間表</h3>
+  <h3 class="sched-title">完整時間表（依我的行程）</h3>
   <div class="card sched" id="sched"></div>
 </section>
 
 <!-- 行程 -->
 <section id="days">
-  <h2><span class="dot" style="background:var(--coral)"></span>每日行程</h2>
+  <h2><span class="dot" style="background:var(--coral)"></span>我的行程（可編輯）</h2>
+  <p class="pk-note">從下方「口袋名單」按「＋D1／＋D2」加點、按「去過」排除；每站可上下移、刪除、調整停留時間，時間、地圖、導航和時間表都會自動重算，並記在這支手機上。</p>
   <div class="tabs" role="tablist" aria-label="選擇日期" id="tabs"></div>
   <div class="legend" id="legend" aria-label="交通標籤說明"></div>
-  <div id="dayPanel" role="tabpanel" aria-live="polite"></div>
+  <p class="sr-only" id="planLive" aria-live="polite"></p>
+  <div id="dayPanel" role="tabpanel"></div>
 </section>
 
 <!-- 口袋名單 -->
 <section id="pocket">
-  <h2><span class="dot" style="background:var(--yellow)"></span>口袋名單</h2>
-  <p class="pk-note">Google 4.3 分以上、依評論數排序的前 20 名，臨時想換店直接點「導航」。</p>
+  <h2><span class="dot" style="background:var(--yellow)"></span>口袋名單・挑點加入行程</h2>
+  <p class="pk-note">Google 4.3 分以上、依評論數排序的前 20 名。去過的按「去過」就會藏起來，沒去過的按「＋D1／＋D2」加進行程。</p>
   <div class="pk-tabs" role="tablist" aria-label="名單分類">
-    <button class="pk-tab" role="tab" aria-selected="true" data-k="snack">小吃・伴手禮</button>
+    <button class="pk-tab" role="tab" aria-selected="false" data-k="snack">小吃・伴手禮</button>
     <button class="pk-tab" role="tab" aria-selected="false" data-k="rest">餐廳・咖啡</button>
-    <button class="pk-tab" role="tab" aria-selected="false" data-k="spot">景點</button>
+    <button class="pk-tab" role="tab" aria-selected="true" data-k="spot">景點</button>
   </div>
-  <label class="pk-filter"><input type="checkbox" id="pkOpen">只看週六日都有營業</label>
-  <div class="pk-list" id="pkList" role="tabpanel" aria-live="polite"></div>
-  <p class="map-note">時間為「距宜蘭市區約」的估算車程。羅東夜市（4.2）與湯圍溝（4.2）低於 4.3 未列入名單，羅東夜市仍保留在行程當晚餐地點。部分店名 Google 只提供英文，照原樣列出。</p>
+  <div class="pk-filters">
+    <label class="pk-filter"><input type="checkbox" id="pkHideSeen" checked>隱藏去過的</label>
+    <label class="pk-filter"><input type="checkbox" id="pkOpen">只看週六日都有營業</label>
+  </div>
+  <p class="map-note" id="pkCount" style="margin:0 0 10px"></p>
+  <div class="pk-list" id="pkList"></div>
+  <p class="map-note">時間為「距宜蘭市區約」的估算車程；行程車程用直線距離估算，實際以導航為準。部分店名 Google 只提供英文，照原樣列出。</p>
 </section>
 
 <!-- 待辦 -->
@@ -480,7 +511,7 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
 </section>
 
 <footer>
-  景點與店家為 Google 地圖評分 4.2 以上（名單 4.3 以上，2026 年 10 月資料）<br>
+  行程與名單皆為 Google 地圖評分 4.3 以上、評論數前 20 名（2026 年 10 月資料）<br>
   開放時間與車程為估算，出發前請再確認官網公告與即時路況
 </footer>
 </main>
@@ -490,7 +521,7 @@ const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 /* ---------- 倒數 ---------- */
 const DEPART = new Date('2026-11-28T07:30:00+08:00');
-const RETURN = new Date('2026-11-29T19:00:00+08:00');
+const RETURN = new Date('2026-11-29T21:00:00+08:00');
 const DAY1 = new Date('2026-11-28T00:00:00+08:00');
 function pad(n){return String(n).padStart(2,'0')}
 function tick(){
@@ -513,103 +544,334 @@ tick(); setInterval(tick,1000);
 const T = {
   hwy:  {label:'國道', bg:'#F2A497', icon:'▶'},
   car:  {label:'自駕', bg:'#F6D27A', icon:'◆'},
-  walk: {label:'步行', bg:'#B9DAA5', icon:'●'}
+  stay: {label:'停留', bg:'#B9DAA5', icon:'●'}
 };
 document.getElementById('legend').innerHTML = Object.values(T)
   .map(t=>`<span class="tg" style="background:${t.bg}"><i aria-hidden="true">${t.icon}</i>${t.label}</span>`).join('');
 
-/* ---------- 地點資料 ---------- */
-const ST = {"礁溪溫泉公園": {"n": "礁溪溫泉公園", "id": "ChIJQwv29kn6ZzQR8ACrvxU8Mh0", "r": 4.3, "c": 8440, "lat": 24.832602, "lng": 121.776678, "sa": "全天", "su": "全天", "area": "礁溪", "min": 20}, "二鬼麵舖": {"n": "二鬼麵舖", "id": "ChIJl6baSUnlZzQR3n9IJKuUvAU", "r": 4.8, "c": 2185, "lat": 24.756296, "lng": 121.75777, "sa": "11:30–20:00", "su": "11:30–20:00", "area": "宜蘭市", "min": 5}, "張美阿嬤農場": {"n": "張美阿嬤農場", "id": "ChIJhfheDgnhZzQRzHYRfqcbt3E", "r": 4.9, "c": 93055, "lat": 24.674867, "lng": 121.675608, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "三星", "min": 25}, "財記臭豆腐": {"n": "財記臭豆腐", "id": "ChIJKxwOWnjmZzQRzdBg7MCHrsg", "r": 4.5, "c": 5205, "lat": 24.678582, "lng": 121.770966, "sa": "14:00–22:00", "su": "14:00–22:00", "area": "羅東", "min": 15}, "財哥古早味龍鳳腿": {"n": "財哥古早味龍鳳腿", "id": "ChIJL8iPvH7mZzQRh-lWUl_09B8", "r": 4.8, "c": 743, "lat": 24.676895, "lng": 121.770176, "sa": "15:00–22:00", "su": "15:00–22:00", "area": "羅東", "min": 20}, "阿嬤蔥油餅": {"n": "阿嬤蔥油餅", "id": "ChIJOaQt9v75ZzQRRWO_pGTYu9k", "r": 4.3, "c": 7606, "lat": 24.844993, "lng": 121.807418, "sa": "08:00–18:00", "su": "08:00–18:00", "area": "頭城", "min": 25}, "奕順軒": {"n": "奕順軒", "id": "ChIJGTvFXsLkZzQRAgn_vUlM3b8", "r": 4.4, "c": 9885, "lat": 24.750866, "lng": 121.750689, "sa": "09:30–21:30", "su": "09:30–21:30", "area": "宜蘭市", "min": 5}, "幾米廣場": {"n": "幾米廣場", "id": "ChIJf9oXY9zkZzQR5FIpJ9WpOis", "r": 4.3, "c": 391, "lat": 24.752344, "lng": 121.75682, "sa": "全天", "su": "全天", "area": "宜蘭市", "min": 5}, "清水地熱": {"n": "清水地熱", "id": "ChIJVVVVVRVxaDQRDc3Y8MyRVlE", "r": 4.5, "c": 24864, "lat": 24.611809, "lng": 121.636565, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "三星", "min": 40}, "羅東林業文化園區": {"n": "羅東林業文化園區", "id": "ChIJMY-Oj9blZzQR-KxtOScEVwc", "r": 4.4, "c": 25292, "lat": 24.681931, "lng": 121.772251, "sa": "08:00–17:00", "su": "08:00–17:00", "area": "羅東", "min": 15}, "綠舞日式主題園區": {"n": "綠舞日式主題園區", "id": "ChIJpzLU8nrvZzQR278mV9P_44E", "r": 4.6, "c": 5872, "lat": 24.702987, "lng": 121.820743, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "五結", "min": 15}, "羅東夜市": {"n": "羅東夜市", "id": "ChIJrw3A9X3mZzQRa6_ZjGQS3Sk", "r": 4.2, "c": 25136, "lat": 24.676587, "lng": 121.768107, "sa": "15:00–24:00", "su": "15:00–24:00", "area": "羅東", "min": 20}, "國立傳統藝術中心": {"n": "國立傳統藝術中心", "id": "ChIJjReEGkPvZzQR_8WyhotGs1o", "r": 4.4, "c": 39648, "lat": 24.685587, "lng": 121.824053, "sa": "公休", "su": "09:00–18:00", "area": "五結", "min": 20}, "蘭陽博物館": {"n": "蘭陽博物館", "id": "ChIJA-31vXL3ZzQRhjLz4ziA8UA", "r": 4.4, "c": 22945, "lat": 24.868656, "lng": 121.832741, "sa": "公休", "su": "09:00–17:00", "area": "頭城", "min": 30}};
-const P = {
-  jx: ST['礁溪溫泉公園'], jm: ST['幾米廣場'], ok: ST['二鬼麵舖'], zm: ST['張美阿嬤農場'], qs: ST['清水地熱'],
-  ld: ST['羅東林業文化園區'], ye: ST['羅東夜市'], gd: ST['綠舞日式主題園區'], cy: ST['國立傳統藝術中心'],
-  ly: ST['蘭陽博物館'], cb: ST['阿嬤蔥油餅'], ck: ST['財記臭豆腐'], lf: ST['財哥古早味龍鳳腿']
+/* ---------- 資料 ---------- */
+const POCKET = {"snack": [{"n": "奕順軒（宜蘭餅、伴手禮）", "id": "ChIJGTvFXsLkZzQRAgn_vUlM3b8", "r": 4.4, "c": 9885, "lat": 24.750866, "lng": 121.750689, "sa": "09:30–21:30", "su": "09:30–21:30", "area": "宜蘭市", "min": 5}, {"n": "阿嬤蔥油餅（頭城）", "id": "ChIJOaQt9v75ZzQRRWO_pGTYu9k", "r": 4.3, "c": 7606, "lat": 24.844993, "lng": 121.807418, "sa": "08:00–18:00", "su": "08:00–18:00", "area": "頭城", "min": 25}, {"n": "財記臭豆腐（羅東）", "id": "ChIJKxwOWnjmZzQRzdBg7MCHrsg", "r": 4.5, "c": 5205, "lat": 24.678582, "lng": 121.770966, "sa": "14:00–22:00", "su": "14:00–22:00", "area": "羅東", "min": 15}, {"n": "八寶冬粉（礁溪）", "id": "ChIJ-8GeaBv7ZzQR1t6fRV7BDOY", "r": 4.4, "c": 4486, "lat": 24.822923, "lng": 121.771539, "sa": "10:00–20:30", "su": "10:00–20:30", "area": "礁溪", "min": 15}, {"n": "宜蘭餅 劉鐙徽（羅東）", "id": "ChIJg-9o-XjmZzQR7vQMERREuIM", "r": 4.8, "c": 4442, "lat": 24.676926, "lng": 121.763763, "sa": "08:00–21:30", "su": "08:00–21:30", "area": "羅東", "min": 15}, {"n": "涼心冰店", "id": "ChIJNf7XAMPkZzQR098mKA25eP0", "r": 4.5, "c": 3205, "lat": 24.752181, "lng": 121.751073, "sa": "11:00–21:00", "su": "11:00–21:00", "area": "宜蘭市", "min": 5}, {"n": "Old Melon N Chic 麵店", "id": "ChIJmV1g-M_kZzQRiufwSXI7VNs", "r": 4.3, "c": 2775, "lat": 24.752185, "lng": 121.739838, "sa": "10:30–21:30", "su": "10:30–21:30", "area": "宜蘭市", "min": 5}, {"n": "二鬼麵舖", "id": "ChIJl6baSUnlZzQR3n9IJKuUvAU", "r": 4.8, "c": 2185, "lat": 24.756296, "lng": 121.75777, "sa": "11:30–20:00", "su": "11:30–20:00", "area": "宜蘭市", "min": 5}, {"n": "武淵蔥油餅（冬山）", "id": "ChIJ1W1dQT3nZzQRGiaagqn_3tk", "r": 4.8, "c": 2140, "lat": 24.661783, "lng": 121.800247, "sa": "11:00–18:00", "su": "11:00–18:00", "area": "冬山", "min": 25}, {"n": "奇淋冰品", "id": "ChIJL69IFSTlZzQRdHkXP_T5tnw", "r": 4.3, "c": 1646, "lat": 24.750641, "lng": 121.772058, "sa": "12:00–21:00", "su": "12:00–21:00", "area": "宜蘭市", "min": 5}, {"n": "上品佑食堂（羅東）", "id": "ChIJbwJ1glzlZzQRh7QsVvlnrIM", "r": 4.4, "c": 1515, "lat": 24.687861, "lng": 121.765791, "sa": "11:00–19:30", "su": "11:00–19:30", "area": "羅東", "min": 15}, {"n": "Eason 甜點", "id": "ChIJqezY4M_kZzQR_rJD4RkgsTk", "r": 4.9, "c": 1345, "lat": 24.760338, "lng": 121.753319, "sa": "09:00–20:00", "su": "09:00–20:00", "area": "宜蘭市", "min": 5}, {"n": "口福小籠湯包", "id": "ChIJFdog9z_lZzQR3dKrLVL-f1k", "r": 4.6, "c": 947, "lat": 24.748806, "lng": 121.748731, "sa": "10:00–19:00", "su": "10:00–19:00", "area": "宜蘭市", "min": 5}, {"n": "財哥古早味龍鳳腿（羅東）", "id": "ChIJL8iPvH7mZzQRh-lWUl_09B8", "r": 4.8, "c": 743, "lat": 24.676895, "lng": 121.770176, "sa": "15:00–22:00", "su": "15:00–22:00", "area": "羅東", "min": 20}, {"n": "朝鋒餅舖（牛舌餅）", "id": "ChIJZe5W8NjkZzQRTQeDqTVD-_0", "r": 4.6, "c": 555, "lat": 24.753825, "lng": 121.763331, "sa": "09:30–18:00", "su": "09:30–18:00", "area": "宜蘭市", "min": 5}, {"n": "阿麗蔥油餅", "id": "ChIJfXIm-WvlZzQRtkMJPGcSc_o", "r": 5.0, "c": 408, "lat": 24.764589, "lng": 121.772305, "sa": "14:00–18:00", "su": "公休", "area": "宜蘭市", "min": 5}, {"n": "長房老元香牛舌餅", "id": "ChIJ_WIYCcPkZzQRiYBfmhz-4QU", "r": 4.3, "c": 356, "lat": 24.752658, "lng": 121.751175, "sa": "09:00–22:00", "su": "09:00–22:00", "area": "宜蘭市", "min": 5}, {"n": "古早味碗粿／筒仔米糕（羅東）", "id": "ChIJv36Z1H7mZzQRfg39zCvgFXI", "r": 4.3, "c": 356, "lat": 24.677945, "lng": 121.770767, "sa": "06:00–20:00", "su": "06:00–20:00", "area": "羅東", "min": 15}, {"n": "阿水冰果室（冬山）", "id": "ChIJKXwR4qLhZzQRX2D09SIGz5c", "r": 4.8, "c": 319, "lat": 24.634403, "lng": 121.713895, "sa": "11:00–18:00", "su": "11:00–18:00", "area": "冬山", "min": 30}, {"n": "星寶蔥仔餅（三星）", "id": "ChIJX2lXapsKaDQRN5GFbNmpI1M", "r": 4.8, "c": 301, "lat": 24.661548, "lng": 121.621288, "sa": "10:00–18:00", "su": "10:00–18:00", "area": "三星", "min": 35}], "rest": [{"n": "甕窯雞（礁溪）", "id": "ChIJJezzuDz6ZzQRyP4H5_MmMmI", "r": 4.3, "c": 23736, "lat": 24.835586, "lng": 121.783401, "sa": "09:00–22:00", "su": "09:00–22:00", "area": "礁溪", "min": 20}, {"n": "Sanyou Ramen 拉麵（礁溪）", "id": "ChIJfVncRs37ZzQRGPHQFtDbLvU", "r": 4.8, "c": 14548, "lat": 24.828119, "lng": 121.775132, "sa": "11:30–21:00", "su": "11:30–21:00", "area": "礁溪", "min": 15}, {"n": "Huangjia Huayuan 中式合菜（礁溪）", "id": "ChIJy9WlqyL7ZzQRuS9aVepmmt0", "r": 4.8, "c": 12970, "lat": 24.837723, "lng": 121.786934, "sa": "11:00–21:00", "su": "11:00–21:00", "area": "礁溪", "min": 20}, {"n": "Hai Zhen Huo 活海產（南方澳）", "id": "ChIJa0bDn9rpZzQRp9bQIGPjSws", "r": 4.7, "c": 10804, "lat": 24.582423, "lng": 121.867082, "sa": "10:30–20:00", "su": "10:30–20:00", "area": "蘇澳", "min": 45}, {"n": "樹懶餐廳・萌寵農場（三星）", "id": "ChIJj-bqqm_hZzQR54BcX0Lexpo", "r": 4.9, "c": 10643, "lat": 24.680997, "lng": 121.675897, "sa": "09:00–18:00", "su": "09:00–18:00", "area": "三星", "min": 25}, {"n": "老張早餐吧（頭城）", "id": "ChIJ_4cdME36ZzQR-gSjxdpknNw", "r": 4.8, "c": 8827, "lat": 24.857038, "lng": 121.824047, "sa": "06:00–13:00", "su": "06:00–13:00", "area": "頭城", "min": 25}, {"n": "Wei Zhen Huo 活海產（南方澳）", "id": "ChIJ_8BSctDpZzQRAolCEcCp9RY", "r": 4.6, "c": 7894, "lat": 24.582325, "lng": 121.866722, "sa": "10:30–21:00", "su": "10:30–21:00", "area": "蘇澳", "min": 45}, {"n": "石港春帆海鮮（頭城）", "id": "ChIJkes0rQ_3ZzQRw3pruBilu68", "r": 4.9, "c": 5849, "lat": 24.876539, "lng": 121.840025, "sa": "11:30–20:00", "su": "11:30–20:00", "area": "頭城", "min": 30}, {"n": "小老闆海鮮代客料理（頭城）", "id": "ChIJzQa6XNNYXTQRiKOocAU-wTg", "r": 4.7, "c": 5547, "lat": 24.94143, "lng": 121.900309, "sa": "11:30–18:30", "su": "11:30–18:30", "area": "頭城", "min": 50}, {"n": "水鹿咖啡親子館（礁溪）", "id": "ChIJASzqDnD6ZzQRLyWiw4khYo0", "r": 4.5, "c": 5152, "lat": 24.812086, "lng": 121.800209, "sa": "公休", "su": "10:00–19:30", "area": "礁溪", "min": 15}, {"n": "Lao Yugang 海鮮（頭城）", "id": "ChIJdz4zFgz3ZzQRtIVkyo9QCLg", "r": 4.6, "c": 3540, "lat": 24.870546, "lng": 121.835787, "sa": "11:00–19:30", "su": "11:00–19:30", "area": "頭城", "min": 30}, {"n": "糧2燒肉 宜蘭旗艦店", "id": "ChIJn3kRl5DlZzQRtgpAG-cWUeM", "r": 4.8, "c": 3453, "lat": 24.747636, "lng": 121.762083, "sa": "11:30–22:00", "su": "11:30–22:00", "area": "宜蘭市", "min": 5}, {"n": "LanPO 餐廳（宜蘭市）", "id": "ChIJuVbscefkZzQR5bb4tCENnT4", "r": 4.3, "c": 2849, "lat": 24.746719, "lng": 121.757224, "sa": "15:30–21:00", "su": "10:00–21:00", "area": "宜蘭市", "min": 5}, {"n": "麵魂家 豚骨拉麵（羅東）", "id": "ChIJS3_u9IfmZzQRamkJbxqhMXY", "r": 4.3, "c": 2791, "lat": 24.673108, "lng": 121.765508, "sa": "11:30–20:20", "su": "11:30–20:20", "area": "羅東", "min": 20}, {"n": "Wa Cow Brunch（礁溪）", "id": "ChIJv3zoZkn6ZzQRTDEuwFdF3z8", "r": 4.5, "c": 2787, "lat": 24.8259, "lng": 121.771045, "sa": "10:00–19:00", "su": "10:00–19:00", "area": "礁溪", "min": 15}, {"n": "蘭陽溪口親子餐廳（五結）", "id": "ChIJ13AOinPvZzQRUzs2Ia0JQ78", "r": 4.7, "c": 2296, "lat": 24.704603, "lng": 121.828608, "sa": "11:00–20:00", "su": "11:00–20:00", "area": "五結", "min": 20}, {"n": "Dragon Phoenix 藥膳燉補（礁溪）", "id": "ChIJP_lDxJz7ZzQR4Sql-gIQCCc", "r": 4.6, "c": 2271, "lat": 24.828768, "lng": 121.771782, "sa": "11:00–20:30", "su": "11:00–20:30", "area": "礁溪", "min": 15}, {"n": "燒肉 Aniki（羅東）", "id": "ChIJ-8IPJCLnZzQRf-sAI6Filnk", "r": 4.4, "c": 2184, "lat": 24.67741, "lng": 121.768459, "sa": "11:00–02:30", "su": "11:00–02:30", "area": "羅東", "min": 15}, {"n": "A volte 義式（冬山）", "id": "ChIJiYq7rIbmZzQRQTjMScPKl4k", "r": 4.6, "c": 1836, "lat": 24.678287, "lng": 121.759998, "sa": "11:30–21:30", "su": "11:30–21:30", "area": "羅東", "min": 15}, {"n": "Woosa 洋食鬆餅（宜蘭市）", "id": "ChIJty4ATinlZzQRhCQOztZ28Ck", "r": 4.8, "c": 1644, "lat": 24.754507, "lng": 121.751329, "sa": "11:00–22:00", "su": "11:00–21:30", "area": "宜蘭市", "min": 5}], "spot": [{"n": "張美阿嬤農場（三星）", "id": "ChIJhfheDgnhZzQRzHYRfqcbt3E", "r": 4.9, "c": 93055, "lat": 24.674867, "lng": 121.675608, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "三星", "min": 25}, {"n": "國立傳統藝術中心", "id": "ChIJjReEGkPvZzQR_8WyhotGs1o", "r": 4.4, "c": 39648, "lat": 24.685587, "lng": 121.824053, "sa": "公休", "su": "09:00–18:00", "area": "五結", "min": 20}, {"n": "星夢森林劇場（冬山）", "id": "ChIJJzGgyiTnZzQR4fR5_SZE1I8", "r": 4.9, "c": 27819, "lat": 24.680763, "lng": 121.739927, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "冬山", "min": 15}, {"n": "羅東林業文化園區", "id": "ChIJMY-Oj9blZzQR-KxtOScEVwc", "r": 4.4, "c": 25292, "lat": 24.681931, "lng": 121.772251, "sa": "08:00–17:00", "su": "08:00–17:00", "area": "羅東", "min": 15}, {"n": "清水地熱", "id": "ChIJVVVVVRVxaDQRDc3Y8MyRVlE", "r": 4.5, "c": 24864, "lat": 24.611809, "lng": 121.636565, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "三星", "min": 40}, {"n": "蘭陽博物館", "id": "ChIJA-31vXL3ZzQRhjLz4ziA8UA", "r": 4.4, "c": 22945, "lat": 24.868656, "lng": 121.832741, "sa": "公休", "su": "09:00–17:00", "area": "頭城", "min": 30}, {"n": "望龍埤（員山）", "id": "ChIJX3qwoUvjZzQRD_TNlJmeDzQ", "r": 4.3, "c": 15027, "lat": 24.7766, "lng": 121.699097, "sa": "08:00–18:00", "su": "08:00–18:00", "area": "員山", "min": 15}, {"n": "冬山河親水公園（五結）", "id": "ChIJ024RSlXvZzQR9_tIyolRXUc", "r": 4.4, "c": 13762, "lat": 24.672994, "lng": 121.815816, "sa": "08:00–17:00", "su": "08:00–17:00", "area": "五結", "min": 20}, {"n": "宜蘭動物王國（壯圍）", "id": "ChIJ94lzKADvZzQRrjCQPLWtMrE", "r": 4.7, "c": 12840, "lat": 24.735294, "lng": 121.811546, "sa": "09:30–17:00", "su": "09:30–17:00", "area": "壯圍", "min": 10}, {"n": "羅東運動公園（落羽松）", "id": "ChIJR_I4YILmZzQRmijPLPyNOug", "r": 4.5, "c": 12102, "lat": 24.682766, "lng": 121.75752, "sa": "全天", "su": "全天", "area": "羅東", "min": 15}, {"n": "樂色山積木王國（室內）", "id": "ChIJkV-R_4jkZzQRfuu-ae2z9Ag", "r": 4.8, "c": 11994, "lat": 24.730677, "lng": 121.774773, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "宜蘭市", "min": 5}, {"n": "心花鹿 Fun 農場（冬山）", "id": "ChIJpXCVcA3nZzQR1zyfvFCudf4", "r": 4.9, "c": 9735, "lat": 24.64465, "lng": 121.729877, "sa": "09:30–17:00", "su": "09:30–17:00", "area": "冬山", "min": 25}, {"n": "北關海潮公園", "id": "ChIJe74Bdp9YXTQRvl8UD2Uhk3k", "r": 4.4, "c": 9732, "lat": 24.912556, "lng": 121.877625, "sa": "全天", "su": "全天", "area": "頭城", "min": 45}, {"n": "南方澳觀景台", "id": "ChIJMYba8knoZzQRGUjgaehywyo", "r": 4.5, "c": 9070, "lat": 24.576508, "lng": 121.86676, "sa": "全天", "su": "全天", "area": "蘇澳", "min": 45}, {"n": "外澳沙灘", "id": "ChIJw4PJsKf3ZzQRAjRUNGhq4nY", "r": 4.4, "c": 8508, "lat": 24.877811, "lng": 121.843071, "sa": "全天", "su": "全天", "area": "頭城", "min": 35}, {"n": "林美石磐步道", "id": "ChIJNdNOwpv7ZzQR6K_ktSipnsY", "r": 4.5, "c": 8470, "lat": 24.822556, "lng": 121.735701, "sa": "全天", "su": "全天", "area": "礁溪", "min": 15}, {"n": "礁溪溫泉公園", "id": "ChIJQwv29kn6ZzQR8ACrvxU8Mh0", "r": 4.3, "c": 8440, "lat": 24.832602, "lng": 121.776678, "sa": "全天", "su": "全天", "area": "礁溪", "min": 20}, {"n": "綠舞日式主題園區", "id": "ChIJpzLU8nrvZzQR278mV9P_44E", "r": 4.6, "c": 5872, "lat": 24.702987, "lng": 121.820743, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "五結", "min": 15}, {"n": "新寮瀑布步道", "id": "ChIJ8fa8A2HnZzQRfd1-P5qPIPQ", "r": 4.4, "c": 4150, "lat": 24.606232, "lng": 121.747017, "sa": "未提供", "su": "未提供", "area": "冬山", "min": 35}, {"n": "梅花湖", "id": "ChIJ7RubbibnZzQRA8A3eSqKblM", "r": 4.4, "c": 3398, "lat": 24.642725, "lng": 121.733083, "sa": "全天", "su": "全天", "area": "冬山", "min": 25}]};
+const CAT_NAME = {snack:'小吃', rest:'餐廳', spot:'景點'};
+const POOL = {};
+Object.entries(POCKET).forEach(([cat,list])=>list.forEach((x,i)=>{ POOL[x.id] = Object.assign({cat, rank:i+1}, x); }));
+const byName = n => Object.values(POOL).find(x=>x.n===n);
+const HOTEL = byName('綠舞日式主題園區');
+const HSINCHU = {id:'HSINCHU', n:'新竹', q:'新竹市', lat:24.8066, lng:120.9686};
+const TOUCHENG_IC = {lat:24.855, lng:121.80};
+const DEFAULT_STAY = {snack:30, rest:60, spot:60};
+const STAY_OVERRIDE = {'張美阿嬤農場（三星）':75,'樂色山積木王國（室內）':60,'羅東運動公園（落羽松）':45,'清水地熱':50,'羅東林業文化園區':40,'國立傳統藝術中心':150,'蘭陽博物館':90,'礁溪溫泉公園':40,'二鬼麵舖':50,'阿嬤蔥油餅（頭城）':20,'財記臭豆腐（羅東）':30,'財哥古早味龍鳳腿（羅東）':30};
+function stayOf(x){ return STAY_OVERRIDE[x.n] || DEFAULT_STAY[x.cat]; }
+const DAY_META = [
+  {d:'11/28', w:'六', hk:'sa', start:'新竹', end:'綠舞（住宿）', defTime:'07:30'},
+  {d:'11/29', w:'日', hk:'su', start:'綠舞（住宿）', end:'新竹', defTime:'09:30'}
+];
+const DEFAULT_PLAN = {
+  t:['07:30','09:30'],
+  days:[
+    ['礁溪溫泉公園','樂色山積木王國（室內）','二鬼麵舖','張美阿嬤農場（三星）','清水地熱','羅東林業文化園區','羅東運動公園（落羽松）','財記臭豆腐（羅東）','財哥古早味龍鳳腿（羅東）'],
+    ['國立傳統藝術中心','蘭陽博物館','阿嬤蔥油餅（頭城）']
+  ].map(day=>day.map(n=>{const x=byName(n); return {id:x.id, stay:stayOf(x)};}))
 };
-P.hc = {n:'新竹市', id:null};
-function gdir(o, d, way){
-  const e = encodeURIComponent;
-  let u = 'https://www.google.com/maps/dir/?api=1&travelmode=driving';
-  if(o){ u += `&origin=${e(P[o].n)}`; if(P[o].id) u += `&origin_place_id=${P[o].id}`; }
-  u += `&destination=${e(P[d].n)}`; if(P[d].id) u += `&destination_place_id=${P[d].id}`;
-  if(way && way.length){
-    u += `&waypoints=${e(way.map(k=>P[k].n).join('|'))}&waypoint_place_ids=${e(way.map(k=>P[k].id).join('|'))}`;
-  }
-  return u;
+
+/* ---------- 儲存 ---------- */
+const PLAN_KEY='yilan2d-plan-v2', SEEN_KEY='yilan2d-seen-v1';
+function load(k,def){ try{ const v=JSON.parse(localStorage.getItem(k)); return v||def; }catch(e){ return def; } }
+function save(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+let plan = load(PLAN_KEY, null);
+if(!plan || !plan.days || plan.days.some(d=>d.some(s=>!POOL[s.id]))) plan = JSON.parse(JSON.stringify(DEFAULT_PLAN));
+let seen = new Set(load(SEEN_KEY, []));
+
+/* ---------- 時間與距離 ---------- */
+const toMin = s => { const [h,m]=s.split(':').map(Number); return h*60+m; };
+const fmt = m => { m=Math.round(m); const d=Math.floor(m/1440); m%=1440; return `${pad(Math.floor(m/60))}:${pad(m%60)}${d?'（隔天）':''}`; };
+function km(a,b){ const R=6371, toR=x=>x*Math.PI/180; const dLa=toR(b.lat-a.lat), dLo=toR(b.lng-a.lng);
+  const h=Math.sin(dLa/2)**2+Math.cos(toR(a.lat))*Math.cos(toR(b.lat))*Math.sin(dLo/2)**2; return 2*R*Math.asin(Math.sqrt(h)); }
+function localMin(a,b){ return Math.max(5, Math.ceil(km(a,b)*1.4/38*60/5)*5); }
+function travel(a,b){
+  if(a.id===b.id) return {m:0, hwy:false};
+  if(a.id==='HSINCHU' || b.id==='HSINCHU'){ const o = a.id==='HSINCHU'?b:a; return {m:105+localMin(TOUCHENG_IC,o), hwy:true}; }
+  return {m:localMin(a,b), hwy:false};
 }
-const MAP = id => `https://www.google.com/maps/search/?api=1&query=Google&query_place_id=${id}`;
+function ranges(h){
+  if(!h || h==='未提供') return null; if(h==='全天') return [[0,1440]]; if(h==='公休') return [];
+  return h.split('、').map(r=>r.split('–').map(toMin));
+}
+function hoursCheck(x, hk, arr, dep){
+  const h=x[hk], r=ranges(h);
+  if(r===null) return null;
+  if(!r.length) return '當天公休';
+  const a=arr%1440, d=dep%1440 || 1440;
+  if(r.some(([s,e])=>s<=a && d<=e)) return null;
+  const first=r.find(([s])=>s>a);
+  if(r.every(([s,e])=>a>=e)) return `可能已打烊（營業 ${h}）`;
+  if(first && !r.some(([s,e])=>s<=a && a<e)) return `還沒開門（${fmt(first[0])} 開）`;
+  return `停留超過營業時間（${h}）`;
+}
+
+/* ---------- 排程計算 ---------- */
+function compute(di){
+  const meta=DAY_META[di], hk=meta.hk;
+  const startNode = di===0 ? HSINCHU : HOTEL, endNode = di===0 ? HOTEL : HSINCHU;
+  let t = toMin(plan.t[di] || meta.defTime), prev = startNode;
+  const rows = [{type:'start', node:startNode, time:t}];
+  plan.days[di].forEach((s,idx)=>{
+    const x=POOL[s.id], tr=travel(prev,x);
+    const arr=t+tr.m, dep=arr+s.stay;
+    rows.push({type:'stop', node:x, idx, tr, arr, dep, stay:s.stay, warn:hoursCheck(x,hk,arr,dep)});
+    t=dep; prev=x;
+  });
+  const tr=travel(prev,endNode);
+  rows.push({type:'end', node:endNode, tr, arr:t+tr.m});
+  return rows;
+}
 
 /* ---------- 每日插圖 ---------- */
 const S = 'stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
-const ICONS = {
-  capy:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><rect x="2" y="50" width="80" height="14" rx="7" fill="#B9DAA5"/><g class="bob"><path d="M14 50 Q10 28 34 24 Q46 14 62 18 Q76 22 74 38 Q72 50 62 50Z" fill="#F6D27A"/><ellipse cx="54" cy="18" rx="4" ry="3" fill="#F6D27A"/><circle cx="60" cy="30" r="2.2" fill="#3E3A39" stroke="none"/><path d="M70 36 q3 1 3 4" fill="none" stroke-width="2.5"/><circle cx="66" cy="38" r="2.5" fill="#F2A497" stroke="none"/><circle cx="44" cy="12" r="7" fill="#F2A497"/><path d="M44 5 q2 -3 5 -2" fill="none" stroke-width="2"/><line x1="24" y1="50" x2="24" y2="54" stroke-width="2.5"/><line x1="58" y1="50" x2="58" y2="54" stroke-width="2.5"/></g></svg>`,
-  island:`<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><path d="M0 46 q10 -6 20 0 t20 0 t20 0 t20 0 t10 0 V66 H0Z" fill="#A8D3E6"/><g class="bob" style="animation-duration:5s"><path d="M36 46 Q42 28 58 30 Q64 20 72 24 Q78 30 80 46Z" fill="#B9DAA5"/></g><path d="M4 52 L28 22 L30 52Z" fill="#FFFFFF"/><g stroke-width="2"><line x1="12" y1="44" x2="29" y2="44"/><line x1="18" y1="36" x2="29" y2="36"/></g></svg>`
-};
-
-/* ---------- 行程資料 ---------- */
-const DAYS = [
- {d:'11/28', w:'六', title:'礁溪・宜蘭市・三星・羅東', note:'動物、地熱、夜市一次玩', icon:'capy', items:[
-  {t:'07:30', n:'新竹出發', p:'國 1／國 3 往北接國 5，過雪山隧道；週六上午南下雪隧常車多，盡量早出門。', tags:[['hwy','約 1 小時 50 分']]},
-  {t:'09:20', n:'礁溪溫泉公園', k:'jx', p:'免費泡腳池，下車先暖暖腳、伸展一下。', tags:[['hwy','頭城／礁溪交流道']]},
-  {t:'10:20', n:'幾米廣場・宜蘭火車站', k:'jm', p:'繪本主題小廣場，大型雕塑和綠色列車很好拍。', tags:[['car','約 15 分']]},
-  {t:'11:30', n:'二鬼麵舖（午餐）', k:'ok', must:true, p:'宜蘭市人氣麵店，就在火車站附近；午餐熱門時段可能要等。', tags:[['walk','約 5 分']]},
-  {t:'13:00', n:'張美阿嬤農場', k:'zm', must:true, p:'餵水豚、羊咪咪，門票含飼料；全宜蘭評論最多的景點。', tags:[['car','約 30 分']]},
-  {t:'14:30', n:'清水地熱', k:'qs', must:true, p:'用地熱煮雞蛋、玉米當點心；竹籃押金和停車費收現金，17:00 關門。', tags:[['car','約 25 分']]},
-  {t:'16:00', n:'羅東林業文化園區', k:'ld', p:'免費入園，貯木池、老火車頭，散步很舒服；17:00 關門。', tags:[['car','約 35 分']]},
-  {t:'17:00', n:'入住綠舞日式主題園區', k:'gd', p:'園區有水豚、羊駝，房間有溫泉浴池。', tags:[['car','約 20 分']]},
-  {t:'18:00', n:'羅東夜市晚餐', k:'ye', must:true, p:'推薦財記臭豆腐（4.5）、財哥古早味龍鳳腿（4.8），再補三星蔥餅；人多又有機車，牽好小朋友。', tags:[['car','約 20 分']]}
- ]},
- {d:'11/29', w:'日', title:'傳藝中心・蘭陽博物館・回家', note:'兩個館週六休，週日剛好都開', icon:'island', items:[
-  {t:'08:30', n:'綠舞園區早上散步', k:'gd', p:'吃完早餐趁人少去餵動物、划天鵝船，再退房。', tags:[['walk','園區內']]},
-  {t:'10:30', n:'國立傳統藝術中心', k:'cy', must:true, p:'老街造景、傳統戲曲表演和 DIY 手作，午餐在園區老街吃。', tags:[['car','約 5 分']]},
-  {t:'13:30', n:'蘭陽博物館', k:'ly', must:true, p:'像海邊斜立岩石的建築，有兒童遊戲區；Google 顯示週六休館，所以排今天。', tags:[['car','約 35 分']]},
-  {t:'15:10', n:'阿嬤蔥油餅（頭城）', k:'cb', p:'回程前帶一份路上吃；評論 7,600 多則。', tags:[['car','約 10 分']]},
-  {t:'15:40', n:'頭城上國 5 回新竹', p:'週日下午北上雪隧容易塞，出發前看高公局即時路況；想避開車潮可改在頭城吃完晚餐、19:30 後再走。', tags:[['hwy','約 1.5–3 小時']]}
- ]}
+const ICONS = [
+  `<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><rect x="2" y="50" width="80" height="14" rx="7" fill="#B9DAA5"/><g class="bob"><path d="M14 50 Q10 28 34 24 Q46 14 62 18 Q76 22 74 38 Q72 50 62 50Z" fill="#F6D27A"/><ellipse cx="54" cy="18" rx="4" ry="3" fill="#F6D27A"/><circle cx="60" cy="30" r="2.2" fill="#3E3A39" stroke="none"/><path d="M70 36 q3 1 3 4" fill="none" stroke-width="2.5"/><circle cx="66" cy="38" r="2.5" fill="#F2A497" stroke="none"/><circle cx="44" cy="12" r="7" fill="#F2A497"/><path d="M44 5 q2 -3 5 -2" fill="none" stroke-width="2"/><line x1="24" y1="50" x2="24" y2="54" stroke-width="2.5"/><line x1="58" y1="50" x2="58" y2="54" stroke-width="2.5"/></g></svg>`,
+  `<svg viewBox="0 0 84 66" ${S} aria-hidden="true"><path d="M0 46 q10 -6 20 0 t20 0 t20 0 t20 0 t10 0 V66 H0Z" fill="#A8D3E6"/><g class="bob" style="animation-duration:5s"><path d="M36 46 Q42 28 58 30 Q64 20 72 24 Q78 30 80 46Z" fill="#B9DAA5"/></g><path d="M4 52 L28 22 L30 52Z" fill="#FFFFFF"/><g stroke-width="2"><line x1="12" y1="44" x2="29" y2="44"/><line x1="18" y1="36" x2="29" y2="36"/></g></svg>`
 ];
 
-const tabsEl = document.getElementById('tabs');
-const panel = document.getElementById('dayPanel');
-tabsEl.innerHTML = DAYS.map((d,i)=>`<button class="tab" role="tab" id="tab${i}" aria-controls="dayPanel" aria-selected="${i===0}" data-i="${i}"><b>Day ${i+1}</b><small>${d.d}（${d.w}）</small></button>`).join('');
-function renderDay(i, animate){
-  const d = DAYS[i];
-  panel.setAttribute('aria-labelledby','tab'+i);
+/* ---------- Google 導航 ---------- */
+function nodeQ(x){ return x.id==='HSINCHU' ? {q:x.q, id:null} : {q:x.n.replace(/（.*?）/g,''), id:x.id}; }
+function gdir(o, d, way){
+  const e=encodeURIComponent; let u='https://www.google.com/maps/dir/?api=1&travelmode=driving';
+  if(o){ const a=nodeQ(o); u+=`&origin=${e(a.q)}`; if(a.id) u+=`&origin_place_id=${a.id}`; }
+  const b=nodeQ(d); u+=`&destination=${e(b.q)}`; if(b.id) u+=`&destination_place_id=${b.id}`;
+  if(way && way.length){ const w=way.map(nodeQ); u+=`&waypoints=${e(w.map(x=>x.q).join('|'))}&waypoint_place_ids=${e(w.map(x=>x.id).join('|'))}`; }
+  return u;
+}
+
+/* ---------- 行程畫面 ---------- */
+const tabsEl=document.getElementById('tabs'), panel=document.getElementById('dayPanel'), live=document.getElementById('planLive');
+let curDay=0;
+tabsEl.innerHTML = DAY_META.map((d,i)=>`<button class="tab" role="tab" id="tab${i}" aria-controls="dayPanel" aria-selected="${i===0}" data-i="${i}"><b>Day ${i+1}</b><small>${d.d}（${d.w}）</small></button>`).join('');
+function renderDay(animate){
+  const di=curDay, meta=DAY_META[di], rows=compute(di), last=rows[rows.length-1];
+  panel.setAttribute('aria-labelledby','tab'+di);
   panel.innerHTML = `
-    <div class="card dayhead">${ICONS[d.icon]}<div><h3>Day ${i+1}・${d.title}</h3><p>${d.d}（${d.w}）・${d.note}</p></div></div>
-    <div class="tl">${d.items.map(it=>{ const p=it.k?P[it.k]:null; return `
-      <div class="it${it.must?' must':''}"><div class="card">
-        <span class="time">${it.t}</span>
-        <h4>${it.n}${it.must?'<span class="must-b">★ 必去</span>':''}</h4>
-        <p>${it.p}</p>
+    <div class="card dayhead">${ICONS[di]}<div><h3>Day ${di+1}・${meta.d}（${meta.w}）</h3><p>${meta.start}出發 ${plan.t[di]} → 抵達${meta.end} ${fmt(last.arr)}・共 ${plan.days[di].length} 站</p></div></div>
+    <div class="plan-ctl card">
+      <label>出發時間 <input type="time" id="startTime" value="${plan.t[di]}"></label>
+      <button type="button" class="pbtn" id="autoOrder">自動排順序</button>
+      <button type="button" class="pbtn ghost" id="resetPlan">重設推薦行程</button>
+    </div>
+    <div class="tl">${rows.map(r=>{
+      if(r.type==='start') return `<div class="it"><div class="card"><span class="time">${fmt(r.time)}</span><h4>${r.node.id==='HSINCHU'?'新竹出發':'綠舞園區出發（早上可先餵動物、划船）'}</h4></div></div>`;
+      if(r.type==='end') return `<div class="it"><div class="card"><span class="time">${fmt(r.arr)}</span><h4>${r.node.id==='HSINCHU'?'回到新竹':'抵達綠舞・入住'}</h4>
+        <div class="tags"><span class="tg" style="background:${(r.tr.hwy?T.hwy:T.car).bg}"><i aria-hidden="true">${(r.tr.hwy?T.hwy:T.car).icon}</i>${r.tr.hwy?'國道 5 號':'自駕'}・約 ${r.tr.m} 分</span>
+        ${r.node.id==='HSINCHU'?'<span class="rate">週日下午北上雪隧常塞，實際可能多 1 小時以上</span>':''}</div></div></div>`;
+      const x=r.node;
+      return `<div class="it${x.cat==='spot'&&x.rank<=5?' must':''}"><div class="card">
+        <span class="time">${fmt(r.arr)} – ${fmt(r.dep)}</span>
+        <h4>${x.n}<span class="cat-b">${CAT_NAME[x.cat]} #${x.rank}</span></h4>
+        ${r.warn?`<p class="warn">⚠ ${r.warn}</p>`:''}
         <div class="tags">
-          ${it.tags.map(([k,txt])=>`<span class="tg" style="background:${T[k].bg}"><i aria-hidden="true">${T[k].icon}</i>${T[k].label}${txt?'・'+txt:''}</span>`).join('')}
-          ${p?`<span class="rate">Google ★${p.r}</span><a class="maplk" href="${gdir(null,it.k)}" target="_blank" rel="noopener">導航</a>`:''}
+          <span class="tg" style="background:${(r.tr.hwy?T.hwy:T.car).bg}"><i aria-hidden="true">${(r.tr.hwy?T.hwy:T.car).icon}</i>${r.tr.hwy?'國道 5 號':'自駕'}・約 ${r.tr.m} 分</span>
+          <span class="rate">Google ★${x.r}・${x[meta.hk]==='公休'?'今天公休':'今天 '+x[meta.hk]}</span>
+          <a class="maplk" href="${gdir(null,x)}" target="_blank" rel="noopener">導航</a>
+        </div>
+        <div class="row-ctl">
+          <span class="stayc">停留
+            <button type="button" class="ic-btn" data-act="less" data-i="${r.idx}" aria-label="${x.n} 停留減少 15 分">−</button>
+            <b>${r.stay}</b> 分
+            <button type="button" class="ic-btn" data-act="more" data-i="${r.idx}" aria-label="${x.n} 停留增加 15 分">＋</button></span>
+          <span class="mv">
+            <button type="button" class="ic-btn" data-act="up" data-i="${r.idx}" aria-label="${x.n} 往前" ${r.idx===0?'disabled':''}>↑</button>
+            <button type="button" class="ic-btn" data-act="down" data-i="${r.idx}" aria-label="${x.n} 往後" ${r.idx===plan.days[di].length-1?'disabled':''}>↓</button>
+            <button type="button" class="ic-btn" data-act="other" data-i="${r.idx}" aria-label="${x.n} 移到另一天">⇄</button>
+            <button type="button" class="ic-btn del" data-act="del" data-i="${r.idx}" aria-label="從行程移除 ${x.n}">✕</button>
+          </span>
         </div>
       </div></div>`;}).join('')}
-    </div>`;
+    </div>
+    ${plan.days[di].length? '' : '<p class="pk-note">這天還沒有行程，到下方「口袋名單」按「＋D'+(di+1)+'」加入。</p>'}`;
   if(animate && !reduce.matches){
-    panel.querySelectorAll('.dayhead, .it').forEach((el,k)=>{ el.style.animationDelay=(k*60)+'ms'; el.classList.add('pop'); });
+    panel.querySelectorAll('.dayhead, .it').forEach((el,k)=>{ el.style.animationDelay=(k*50)+'ms'; el.classList.add('pop'); });
   }
 }
+function changed(msg, animate){
+  save(PLAN_KEY, plan);
+  renderDay(animate); renderPocket(false); renderNav(); renderSched(); drawMap();
+  if(msg) live.textContent = msg;
+}
 tabsEl.addEventListener('click', e=>{
-  const b = e.target.closest('.tab'); if(!b) return;
+  const b=e.target.closest('.tab'); if(!b) return;
   tabsEl.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected', t===b));
-  renderDay(+b.dataset.i, true);
+  curDay=+b.dataset.i; renderDay(true);
 });
 tabsEl.addEventListener('keydown', e=>{
   if(!['ArrowLeft','ArrowRight'].includes(e.key)) return;
-  const tabs=[...tabsEl.querySelectorAll('.tab')];
-  let i = tabs.findIndex(t=>t.getAttribute('aria-selected')==='true');
-  i = (i + (e.key==='ArrowRight'?1:-1) + tabs.length) % tabs.length;
+  const tabs=[...tabsEl.querySelectorAll('.tab')]; const i=(curDay+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
   tabs[i].focus(); tabs[i].click();
 });
-(function(){
-  const now = new Date(); let start = 0;
-  if(now >= DAY1 && now <= RETURN){
-    start = Math.min(DAYS.length-1, Math.floor((now - DAY1)/86400000));
-    tabsEl.querySelectorAll('.tab').forEach((t,k)=>t.setAttribute('aria-selected', k===start));
+panel.addEventListener('click', e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  const day=plan.days[curDay];
+  if(b.id==='autoOrder'){ autoOrder(curDay); return changed('已依距離重新排序', true); }
+  if(b.id==='resetPlan'){ if(confirm('要把兩天行程都重設成推薦行程嗎？')){ plan=JSON.parse(JSON.stringify(DEFAULT_PLAN)); changed('已重設為推薦行程', true); } return; }
+  const i=+b.dataset.i, act=b.dataset.act; if(isNaN(i)) return;
+  const name=POOL[day[i].id].n;
+  if(act==='up' && i>0){ [day[i-1],day[i]]=[day[i],day[i-1]]; changed(`${name} 往前移`); }
+  if(act==='down' && i<day.length-1){ [day[i+1],day[i]]=[day[i],day[i+1]]; changed(`${name} 往後移`); }
+  if(act==='less'){ day[i].stay=Math.max(10, day[i].stay-15); changed(`${name} 停留 ${day[i].stay} 分`); }
+  if(act==='more'){ day[i].stay=Math.min(300, day[i].stay+15); changed(`${name} 停留 ${day[i].stay} 分`); }
+  if(act==='del'){ day.splice(i,1); changed(`已移除 ${name}`); }
+  if(act==='other'){ const s=day.splice(i,1)[0]; plan.days[1-curDay].push(s); changed(`${name} 移到 Day ${2-curDay}`); }
+});
+panel.addEventListener('change', e=>{
+  if(e.target.id==='startTime' && e.target.value){ plan.t[curDay]=e.target.value; changed(`Day ${curDay+1} 出發時間改為 ${e.target.value}`); }
+});
+function autoOrder(di){
+  let cur = di===0 ? HSINCHU : HOTEL; const left=[...plan.days[di]], out=[];
+  if(di===0) cur = {id:'IC', lat:TOUCHENG_IC.lat, lng:TOUCHENG_IC.lng}; // 第一天從頭城交流道下來開始排
+  while(left.length){
+    let best=0, bd=Infinity;
+    left.forEach((s,k)=>{ const d=km(cur,POOL[s.id]); if(d<bd){bd=d;best=k;} });
+    const s=left.splice(best,1)[0]; out.push(s); cur=POOL[s.id];
   }
-  renderDay(start, false);
-})();
+  plan.days[di]=out;
+}
+
+/* ---------- 口袋名單 ---------- */
+const pkList=document.getElementById('pkList'), hideSeen=document.getElementById('pkHideSeen'), openOnly=document.getElementById('pkOpen');
+let pkCur='spot';
+function whereIn(id){ for(let d=0;d<2;d++){ if(plan.days[d].some(s=>s.id===id)) return d; } return -1; }
+function renderPocket(anim){
+  const all=POCKET[pkCur];
+  const rows=all.filter(x=>!(hideSeen.checked && seen.has(x.id)) && !(openOnly.checked && (x.sa==='公休'||x.su==='公休')));
+  const hidden=all.filter(x=>seen.has(x.id)).length;
+  document.getElementById('pkCount').textContent = `前 20 名中已標記去過 ${hidden} 個${hideSeen.checked&&hidden?'（已隱藏）':''}`;
+  pkList.innerHTML = rows.map(x=>{
+    const rank=all.indexOf(x)+1, d=whereIn(x.id), isHotel=x.id===HOTEL.id, gone=seen.has(x.id);
+    const hrs = x.sa===x.su ? `六日 ${x.sa}` : `六 ${x.sa}｜日 ${x.su}`;
+    const partial = x.sa==='公休'||x.su==='公休';
+    return `<div class="card pk${gone?' off':''}">
+      <span class="rk">${rank}</span>
+      <div class="pk-main"><div class="nm">${x.n}</div>
+        <div class="meta">
+          <span>★${x.r}・${x.c.toLocaleString()} 則</span>
+          <span class="${partial?'closed':'open'}">${hrs}</span>
+          <span>${x.area}・宜蘭市約 ${x.min} 分</span>
+          ${isHotel?'<span class="in">住宿</span>':''}
+        </div>
+        <div class="pk-act">
+          <button type="button" class="pk-btn seen" data-act="seen" data-id="${x.id}" aria-pressed="${gone}">${gone?'✓ 去過':'去過'}</button>
+          ${isHotel?'':(d>=0
+            ? `<button type="button" class="pk-btn in" data-act="rm" data-id="${x.id}" aria-label="從 Day ${d+1} 移除 ${x.n}">已在 D${d+1} ✕</button>`
+            : `<button type="button" class="pk-btn add" data-act="add" data-day="0" data-id="${x.id}" aria-label="把 ${x.n} 加入 Day 1">＋D1</button>
+               <button type="button" class="pk-btn add" data-act="add" data-day="1" data-id="${x.id}" aria-label="把 ${x.n} 加入 Day 2">＋D2</button>`)}
+          <a class="pk-go" href="${gdir(null,x)}" target="_blank" rel="noopener">導航</a>
+        </div>
+      </div>
+    </div>`;}).join('') || '<p class="pk-note">這一類都標記去過了，取消勾選「隱藏去過的」可以再看到。</p>';
+  if(anim && !reduce.matches){ pkList.querySelectorAll('.pk').forEach((el,i)=>{el.style.animationDelay=(i*25)+'ms';el.classList.add('pop');}); }
+}
+document.querySelectorAll('.pk-tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.pk-tab').forEach(t=>t.setAttribute('aria-selected',t===b));
+  pkCur=b.dataset.k; renderPocket(true);
+}));
+hideSeen.addEventListener('change',()=>renderPocket(false));
+openOnly.addEventListener('change',()=>renderPocket(false));
+pkList.addEventListener('click', e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  const id=b.dataset.id, x=POOL[id];
+  if(b.dataset.act==='seen'){
+    if(seen.has(id)) seen.delete(id); else seen.add(id);
+    save(SEEN_KEY,[...seen]); renderPocket(false);
+    live.textContent = seen.has(id) ? `${x.n} 標記為去過` : `${x.n} 取消去過`;
+  }
+  if(b.dataset.act==='add'){
+    const d=+b.dataset.day; plan.days[d].push({id, stay:stayOf(x)});
+    curDay=d; tabsEl.querySelectorAll('.tab').forEach((t,k)=>t.setAttribute('aria-selected', k===d));
+    changed(`${x.n} 已加入 Day ${d+1}，時間已重算（可按「自動排順序」）`, true);
+  }
+  if(b.dataset.act==='rm'){
+    plan.days.forEach(day=>{ const k=day.findIndex(s=>s.id===id); if(k>=0) day.splice(k,1); });
+    changed(`已從行程移除 ${x.n}`);
+  }
+});
+
+/* ---------- 分段導航（動態） ---------- */
+function renderNav(){
+  const segs=[];
+  [0,1].forEach(di=>{
+    const nodes=[di===0?HSINCHU:HOTEL, ...plan.days[di].map(s=>POOL[s.id]), di===0?HOTEL:HSINCHU];
+    const rows=compute(di);
+    for(let i=0;i<nodes.length-1;i+=4){
+      const end=Math.min(i+4, nodes.length-1);
+      const startTime = i===0 ? rows[0].time : rows[i].dep;
+      segs.push({day:di, t:fmt(startTime), o:nodes[i], d:nodes[end], w:nodes.slice(i+1,end)});
+    }
+  });
+  const nm = x => x.id==='HSINCHU'?'新竹':(x.id===HOTEL.id?'綠舞':x.n.replace(/（.*?）/g,''));
+  document.getElementById('navSegs').innerHTML = segs.map((s,i)=>`
+    <a class="navbtn" href="${gdir(s.o,s.d,s.w)}" target="_blank" rel="noopener">
+      <span class="no">${i+1}</span>
+      <span class="tx">D${s.day+1} ${s.t}　${[s.o,...s.w,s.d].map(nm).join(' → ')}<small>${s.w.length} 個中途點${s.o.id==='HSINCHU'||s.d.id==='HSINCHU'?'・含國 5 雪隧':''}</small></span>
+      <span class="go">導航</span>
+    </a>`).join('');
+  const stops=[...plan.days[0],...plan.days[1]].map(s=>POOL[s.id]);
+  document.getElementById('stopNav').innerHTML = stops.map((x,i)=>`<a href="${gdir(null,x)}" target="_blank" rel="noopener">${i+1}. ${nm(x)}</a>`).join('') + `<a href="${gdir(null,HOTEL)}" target="_blank" rel="noopener">住・綠舞</a>`;
+}
+
+/* ---------- 完整時間表（動態） ---------- */
+function renderSched(){
+  const out=[];
+  [0,1].forEach(di=>{
+    const rows=compute(di), hk=DAY_META[di].hk; let prev=rows[0];
+    rows.forEach(r=>{
+      if(r.type==='start') return;
+      const from = prev.type==='start' ? (prev.node.id==='HSINCHU'?'新竹':'綠舞') : prev.node.n.replace(/（.*?）/g,'');
+      const to = r.node.id==='HSINCHU'?'新竹':(r.node.id===HOTEL.id&&r.type==='end'?'綠舞（入住）':r.node.n.replace(/（.*?）/g,''));
+      const leave = prev.type==='start' ? prev.time : prev.dep;
+      out.push([`D${di+1} ${fmt(leave)} → ${fmt(r.arr)}`, `${from} → ${to}`, '', [[r.tr.hwy?'hwy':'car', `約 ${r.tr.m} 分`]]]);
+      if(r.type==='stop') out.push([`D${di+1} ${fmt(r.arr)} – ${fmt(r.dep)}`, r.node.n, r.warn?('⚠ '+r.warn):`${CAT_NAME[r.node.cat]} #${r.node.rank}・Google ★${r.node.r}`, [['stay',`${r.stay} 分`]]]);
+      prev=r;
+    });
+  });
+  document.getElementById('sched').innerHTML = out.map(([tm,pl,sm,tags])=>`
+    <div class="srow">
+      <span class="tm">${tm}</span>
+      <span class="pl">${pl}${sm?`<small>${sm}</small>`:''}</span>
+      <div class="tags">${tags.map(([k,t])=>`<span class="tg" style="background:${T[k].bg}"><i aria-hidden="true">${T[k].icon}</i>${T[k].label}・${t}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+/* ---------- 真實地圖（動態） ---------- */
+let lmap=null, layer=null, fitted=false;
+function drawMap(){
+  if(!lmap || !window.L) return;
+  layer.clearLayers();
+  const pts=[]; let n=0;
+  [0,1].forEach(di=>{
+    const nodes=plan.days[di].map(s=>POOL[s.id]);
+    const line=[...(di===0?[[24.93,121.70],[TOUCHENG_IC.lat,TOUCHENG_IC.lng]]:[[HOTEL.lat,HOTEL.lng]]), ...nodes.map(x=>[x.lat,x.lng]), ...(di===0?[[HOTEL.lat,HOTEL.lng]]:[[TOUCHENG_IC.lat,TOUCHENG_IC.lng],[24.93,121.70]])];
+    L.polyline(line,{color:'#3E3A39',weight:8,opacity:.9}).addTo(layer);
+    L.polyline(line,{color:di===0?'#F2A497':'#F6D27A',weight:4.5,dashArray:di===0?null:'8 8'}).addTo(layer);
+    const rows=compute(di).filter(r=>r.type==='stop');
+    rows.forEach(r=>{
+      n++; const x=r.node;
+      const icon=L.divIcon({className:'', html:`<div class="mk ${di===1?'sea':''}">${n}</div>`, iconSize:[28,28], iconAnchor:[14,14], popupAnchor:[0,-14]});
+      L.marker([x.lat,x.lng],{icon, title:x.n, keyboard:true}).addTo(layer)
+        .bindPopup(`<b>${n}. ${x.n}</b>D${di+1} ${fmt(r.arr)} – ${fmt(r.dep)}<br>Google ★${x.r}${r.warn?'<br>⚠ '+r.warn:''}<br><a class="pop-nav" href="${gdir(null,x)}" target="_blank" rel="noopener">Google 導航</a>`);
+      pts.push([x.lat,x.lng]);
+    });
+  });
+  const hi=L.divIcon({className:'', html:'<div class="mk hsr">住</div>', iconSize:[28,28], iconAnchor:[14,14], popupAnchor:[0,-14]});
+  L.marker([HOTEL.lat,HOTEL.lng],{icon:hi,title:'綠舞（住宿）'}).addTo(layer).bindPopup(`<b>綠舞日式主題園區（住宿）</b>Google ★${HOTEL.r}<br><a class="pop-nav" href="${gdir(null,HOTEL)}" target="_blank" rel="noopener">Google 導航</a>`);
+  pts.push([HOTEL.lat,HOTEL.lng]);
+  if(!fitted && pts.length){ lmap.fitBounds(L.latLngBounds(pts).pad(0.1)); fitted=true; }
+}
+window.addEventListener('load', function(){
+  const box=document.getElementById('realMap');
+  if(!window.L){ box.innerHTML='<p class="fail">地圖載入失敗，請直接用下方的 Google 地圖導航按鈕。</p>'; return; }
+  lmap=L.map(box,{scrollWheelZoom:false, zoomAnimation:!reduce.matches, fadeAnimation:!reduce.matches, markerZoomAnimation:!reduce.matches});
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18, attribution:'&copy; OpenStreetMap contributors'}).addTo(lmap);
+  layer=L.layerGroup().addTo(lmap);
+  drawMap();
+  document.getElementById('fitMap').addEventListener('click',()=>{ fitted=false; drawMap(); });
+});
 
 /* ---------- 路線圖：減少動態效果時小車停住 ---------- */
 (function(){
@@ -618,112 +880,11 @@ tabsEl.addEventListener('keydown', e=>{
   if(reduce.matches && anim){ anim.remove(); car.setAttribute('transform','translate(220 98)'); }
 })();
 
-/* ---------- 分段導航 ---------- */
-const SEGS = [
-  {t:'D1 07:30', n:'出發 → 礁溪溫泉公園', s:'從你現在的位置出發，走國 5', o:null, d:'jx', w:[]},
-  {t:'D1 10:00', n:'礁溪 → 幾米廣場 → 二鬼麵舖', s:'宜蘭市區，約 15 分', o:'jx', d:'ok', w:['jm']},
-  {t:'D1 12:30', n:'二鬼 → 張美阿嬤 → 清水地熱 → 羅東林業', s:'三星繞一圈到羅東', o:'ok', d:'ld', w:['zm','qs']},
-  {t:'D1 16:50', n:'羅東林業 → 綠舞入住 → 羅東夜市', s:'先 check-in 再去吃晚餐', o:'ld', d:'ye', w:['gd']},
-  {t:'D2 10:20', n:'綠舞 → 傳藝中心 → 蘭陽博物館', s:'五結往北到頭城', o:'gd', d:'ly', w:['cy']},
-  {t:'D2 15:00', n:'蘭陽博物館 → 阿嬤蔥油餅 → 新竹', s:'頭城上國 5 回家', o:'ly', d:'hc', w:['cb']}
-];
-document.getElementById('navSegs').innerHTML = SEGS.map((s,i)=>`
-  <a class="navbtn" href="${gdir(s.o,s.d,s.w)}" target="_blank" rel="noopener">
-    <span class="no">${i+1}</span>
-    <span class="tx">${s.t}　${s.n}<small>${s.s}</small></span>
-    <span class="go">導航</span>
-  </a>`).join('');
-const ORDER = ['jx','jm','ok','zm','qs','ld','gd','ye','cy','ly','cb'];
-const NUM = {jx:1,jm:2,ok:2,zm:3,qs:4,ld:5,ye:5,gd:6,cy:7,ly:8,cb:9};
-document.getElementById('stopNav').innerHTML = ORDER.map(k=>`<a href="${gdir(null,k)}" target="_blank" rel="noopener">${NUM[k]}. ${P[k].n}</a>`).join('');
-
-/* ---------- 完整時間表 ---------- */
-const SCHED = [
-  ['D1 07:30 → 09:20','新竹 → 礁溪','國 1／國 3 → 國 5 雪山隧道', [['hwy','約 1 小時 50 分']]],
-  ['D1 09:20 – 10:00','① 礁溪溫泉公園','免費泡腳', []],
-  ['D1 10:00 → 10:20','礁溪 → 宜蘭市','', [['car','約 15 分']]],
-  ['D1 10:20 – 11:20','② 幾米廣場','拍照、逛火車站周邊', []],
-  ['D1 11:30 – 12:30','② 二鬼麵舖','午餐', [['walk','約 5 分']]],
-  ['D1 12:30 → 13:00','宜蘭市 → 三星','', [['car','約 30 分']]],
-  ['D1 13:00 – 14:05','③ 張美阿嬤農場','餵水豚、羊', []],
-  ['D1 14:05 → 14:30','三星 → 清水地熱','', [['car','約 25 分']]],
-  ['D1 14:30 – 15:25','④ 清水地熱','煮蛋、泡腳', []],
-  ['D1 15:25 → 16:00','清水 → 羅東','', [['car','約 35 分']]],
-  ['D1 16:00 – 16:40','⑤ 羅東林業文化園區','17:00 關門', []],
-  ['D1 16:40 → 17:00','羅東 → 五結','', [['car','約 20 分']]],
-  ['D1 17:00 – 17:40','⑥ 綠舞入住','放行李、休息', []],
-  ['D1 17:40 → 18:00','五結 → 羅東夜市','', [['car','約 20 分']]],
-  ['D1 18:00 – 20:00','⑤ 羅東夜市晚餐','財記臭豆腐、財哥龍鳳腿', []],
-  ['D2 08:30 – 10:20','⑥ 綠舞園區','早餐、餵動物、退房', []],
-  ['D2 10:30 – 13:00','⑦ 傳統藝術中心','含午餐', [['car','約 5 分']]],
-  ['D2 13:00 → 13:30','五結 → 頭城','', [['car','約 35 分']]],
-  ['D2 13:30 – 15:00','⑧ 蘭陽博物館','', []],
-  ['D2 15:10 – 15:30','⑨ 阿嬤蔥油餅','外帶路上吃', [['car','約 10 分']]],
-  ['D2 15:40 → 約 18:30','頭城 → 新竹','國 5 北上，依路況', [['hwy','約 1.5–3 小時']]]
-];
-document.getElementById('sched').innerHTML = SCHED.map(([tm,pl,sm,tags])=>`
-  <div class="srow">
-    <span class="tm">${tm}</span>
-    <span class="pl">${pl}${sm?`<small>${sm}</small>`:''}</span>
-    ${tags.length?`<div class="tags">${tags.map(([k,t])=>`<span class="tg" style="background:${T[k].bg}"><i aria-hidden="true">${T[k].icon}</i>${T[k].label}・${t}</span>`).join('')}</div>`:''}
-  </div>`).join('');
-
-/* ---------- 真實地圖 ---------- */
-window.addEventListener('load', function(){
-  const box = document.getElementById('realMap');
-  if(!window.L){ box.innerHTML = '<p class="fail">地圖載入失敗，請直接用下方的 Google 地圖導航按鈕。</p>'; return; }
-  const map = L.map(box, {scrollWheelZoom:false, zoomAnimation:!reduce.matches, fadeAnimation:!reduce.matches, markerZoomAnimation:!reduce.matches});
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:18, attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
-  const ll = k => [P[k].lat, P[k].lng];
-  const d1 = [[24.93,121.70],[24.86,121.80],ll('jx'),ll('jm'),ll('ok'),ll('zm'),ll('qs'),ll('ld'),ll('gd'),ll('ye')];
-  const d2 = [ll('gd'),ll('cy'),[24.76,121.82],ll('ly'),ll('cb'),[24.86,121.80],[24.93,121.70]];
-  L.polyline(d1,{color:'#3E3A39',weight:8,opacity:.9}).addTo(map); L.polyline(d1,{color:'#F2A497',weight:4.5}).addTo(map);
-  L.polyline(d2,{color:'#3E3A39',weight:7,opacity:.9,dashArray:'2 10'}).addTo(map); L.polyline(d2,{color:'#F6D27A',weight:4,dashArray:'8 8'}).addTo(map);
-  const INFO = {jx:['D1 09:20','免費泡腳'], jm:['D1 10:20','繪本主題廣場'], ok:['D1 11:30 午餐','火車站附近'], zm:['D1 13:00','餵水豚、羊'],
-    qs:['D1 14:30','地熱煮蛋'], ld:['D1 16:00','17:00 關門'], gd:['D1 17:00 入住','D2 08:30 園區散步'], ye:['D1 18:00 晚餐','財記臭豆腐、財哥龍鳳腿'],
-    cy:['D2 10:30','含午餐'], ly:['D2 13:30','兒童遊戲區'], cb:['D2 15:10','外帶後上國 5']};
-  const pts=[];
-  ORDER.forEach(k=>{
-    const p=P[k], d2stop=['cy','ly','cb'].includes(k);
-    const icon=L.divIcon({className:'', html:`<div class="mk ${d2stop?'sea':''}">${NUM[k]}</div>`, iconSize:[28,28], iconAnchor:[14,14], popupAnchor:[0,-14]});
-    L.marker(ll(k),{icon, title:p.n, keyboard:true}).addTo(map)
-      .bindPopup(`<b>${NUM[k]}. ${p.n}</b>${INFO[k][0]}<br>${INFO[k][1]}<br>Google ★${p.r}<br><a class="pop-nav" href="${gdir(null,k)}" target="_blank" rel="noopener">Google 導航</a>`);
-    pts.push(ll(k));
-  });
-  map.fitBounds(L.latLngBounds(pts).pad(0.1));
-});
-
-/* ---------- 口袋名單 ---------- */
-const POCKET = {"snack": [{"n": "奕順軒（宜蘭餅、伴手禮）", "id": "ChIJGTvFXsLkZzQRAgn_vUlM3b8", "r": 4.4, "c": 9885, "lat": 24.750866, "lng": 121.750689, "sa": "09:30–21:30", "su": "09:30–21:30", "area": "宜蘭市", "min": 5}, {"n": "阿嬤蔥油餅（頭城）", "id": "ChIJOaQt9v75ZzQRRWO_pGTYu9k", "r": 4.3, "c": 7606, "lat": 24.844993, "lng": 121.807418, "sa": "08:00–18:00", "su": "08:00–18:00", "area": "頭城", "min": 25}, {"n": "財記臭豆腐（羅東）", "id": "ChIJKxwOWnjmZzQRzdBg7MCHrsg", "r": 4.5, "c": 5205, "lat": 24.678582, "lng": 121.770966, "sa": "14:00–22:00", "su": "14:00–22:00", "area": "羅東", "min": 15}, {"n": "八寶冬粉（礁溪）", "id": "ChIJ-8GeaBv7ZzQR1t6fRV7BDOY", "r": 4.4, "c": 4486, "lat": 24.822923, "lng": 121.771539, "sa": "10:00–20:30", "su": "10:00–20:30", "area": "礁溪", "min": 15}, {"n": "宜蘭餅 劉鐙徽（羅東）", "id": "ChIJg-9o-XjmZzQR7vQMERREuIM", "r": 4.8, "c": 4442, "lat": 24.676926, "lng": 121.763763, "sa": "08:00–21:30", "su": "08:00–21:30", "area": "羅東", "min": 15}, {"n": "涼心冰店", "id": "ChIJNf7XAMPkZzQR098mKA25eP0", "r": 4.5, "c": 3205, "lat": 24.752181, "lng": 121.751073, "sa": "11:00–21:00", "su": "11:00–21:00", "area": "宜蘭市", "min": 5}, {"n": "Old Melon N Chic 麵店", "id": "ChIJmV1g-M_kZzQRiufwSXI7VNs", "r": 4.3, "c": 2775, "lat": 24.752185, "lng": 121.739838, "sa": "10:30–21:30", "su": "10:30–21:30", "area": "宜蘭市", "min": 5}, {"n": "二鬼麵舖", "id": "ChIJl6baSUnlZzQR3n9IJKuUvAU", "r": 4.8, "c": 2185, "lat": 24.756296, "lng": 121.75777, "sa": "11:30–20:00", "su": "11:30–20:00", "area": "宜蘭市", "min": 5}, {"n": "武淵蔥油餅（冬山）", "id": "ChIJ1W1dQT3nZzQRGiaagqn_3tk", "r": 4.8, "c": 2140, "lat": 24.661783, "lng": 121.800247, "sa": "11:00–18:00", "su": "11:00–18:00", "area": "冬山", "min": 25}, {"n": "奇淋冰品", "id": "ChIJL69IFSTlZzQRdHkXP_T5tnw", "r": 4.3, "c": 1646, "lat": 24.750641, "lng": 121.772058, "sa": "12:00–21:00", "su": "12:00–21:00", "area": "宜蘭市", "min": 5}, {"n": "上品佑食堂（羅東）", "id": "ChIJbwJ1glzlZzQRh7QsVvlnrIM", "r": 4.4, "c": 1515, "lat": 24.687861, "lng": 121.765791, "sa": "11:00–19:30", "su": "11:00–19:30", "area": "羅東", "min": 15}, {"n": "Eason 甜點", "id": "ChIJqezY4M_kZzQR_rJD4RkgsTk", "r": 4.9, "c": 1345, "lat": 24.760338, "lng": 121.753319, "sa": "09:00–20:00", "su": "09:00–20:00", "area": "宜蘭市", "min": 5}, {"n": "口福小籠湯包", "id": "ChIJFdog9z_lZzQR3dKrLVL-f1k", "r": 4.6, "c": 947, "lat": 24.748806, "lng": 121.748731, "sa": "10:00–19:00", "su": "10:00–19:00", "area": "宜蘭市", "min": 5}, {"n": "財哥古早味龍鳳腿（羅東）", "id": "ChIJL8iPvH7mZzQRh-lWUl_09B8", "r": 4.8, "c": 743, "lat": 24.676895, "lng": 121.770176, "sa": "15:00–22:00", "su": "15:00–22:00", "area": "羅東", "min": 20}, {"n": "朝鋒餅舖（牛舌餅）", "id": "ChIJZe5W8NjkZzQRTQeDqTVD-_0", "r": 4.6, "c": 555, "lat": 24.753825, "lng": 121.763331, "sa": "09:30–18:00", "su": "09:30–18:00", "area": "宜蘭市", "min": 5}, {"n": "阿麗蔥油餅", "id": "ChIJfXIm-WvlZzQRtkMJPGcSc_o", "r": 5.0, "c": 408, "lat": 24.764589, "lng": 121.772305, "sa": "14:00–18:00", "su": "公休", "area": "宜蘭市", "min": 5}, {"n": "長房老元香牛舌餅", "id": "ChIJ_WIYCcPkZzQRiYBfmhz-4QU", "r": 4.3, "c": 356, "lat": 24.752658, "lng": 121.751175, "sa": "09:00–22:00", "su": "09:00–22:00", "area": "宜蘭市", "min": 5}, {"n": "古早味碗粿／筒仔米糕（羅東）", "id": "ChIJv36Z1H7mZzQRfg39zCvgFXI", "r": 4.3, "c": 356, "lat": 24.677945, "lng": 121.770767, "sa": "06:00–20:00", "su": "06:00–20:00", "area": "羅東", "min": 15}, {"n": "阿水冰果室（冬山）", "id": "ChIJKXwR4qLhZzQRX2D09SIGz5c", "r": 4.8, "c": 319, "lat": 24.634403, "lng": 121.713895, "sa": "11:00–18:00", "su": "11:00–18:00", "area": "冬山", "min": 30}, {"n": "星寶蔥仔餅（三星）", "id": "ChIJX2lXapsKaDQRN5GFbNmpI1M", "r": 4.8, "c": 301, "lat": 24.661548, "lng": 121.621288, "sa": "10:00–18:00", "su": "10:00–18:00", "area": "三星", "min": 35}], "rest": [{"n": "甕窯雞（礁溪）", "id": "ChIJJezzuDz6ZzQRyP4H5_MmMmI", "r": 4.3, "c": 23736, "lat": 24.835586, "lng": 121.783401, "sa": "09:00–22:00", "su": "09:00–22:00", "area": "礁溪", "min": 20}, {"n": "Sanyou Ramen 拉麵（礁溪）", "id": "ChIJfVncRs37ZzQRGPHQFtDbLvU", "r": 4.8, "c": 14548, "lat": 24.828119, "lng": 121.775132, "sa": "11:30–21:00", "su": "11:30–21:00", "area": "礁溪", "min": 15}, {"n": "Huangjia Huayuan 中式合菜（礁溪）", "id": "ChIJy9WlqyL7ZzQRuS9aVepmmt0", "r": 4.8, "c": 12970, "lat": 24.837723, "lng": 121.786934, "sa": "11:00–21:00", "su": "11:00–21:00", "area": "礁溪", "min": 20}, {"n": "Hai Zhen Huo 活海產（南方澳）", "id": "ChIJa0bDn9rpZzQRp9bQIGPjSws", "r": 4.7, "c": 10804, "lat": 24.582423, "lng": 121.867082, "sa": "10:30–20:00", "su": "10:30–20:00", "area": "蘇澳", "min": 45}, {"n": "樹懶餐廳・萌寵農場（三星）", "id": "ChIJj-bqqm_hZzQR54BcX0Lexpo", "r": 4.9, "c": 10643, "lat": 24.680997, "lng": 121.675897, "sa": "09:00–18:00", "su": "09:00–18:00", "area": "三星", "min": 25}, {"n": "老張早餐吧（頭城）", "id": "ChIJ_4cdME36ZzQR-gSjxdpknNw", "r": 4.8, "c": 8827, "lat": 24.857038, "lng": 121.824047, "sa": "06:00–13:00", "su": "06:00–13:00", "area": "頭城", "min": 25}, {"n": "Wei Zhen Huo 活海產（南方澳）", "id": "ChIJ_8BSctDpZzQRAolCEcCp9RY", "r": 4.6, "c": 7894, "lat": 24.582325, "lng": 121.866722, "sa": "10:30–21:00", "su": "10:30–21:00", "area": "蘇澳", "min": 45}, {"n": "石港春帆海鮮（頭城）", "id": "ChIJkes0rQ_3ZzQRw3pruBilu68", "r": 4.9, "c": 5849, "lat": 24.876539, "lng": 121.840025, "sa": "11:30–20:00", "su": "11:30–20:00", "area": "頭城", "min": 30}, {"n": "小老闆海鮮代客料理（頭城）", "id": "ChIJzQa6XNNYXTQRiKOocAU-wTg", "r": 4.7, "c": 5547, "lat": 24.94143, "lng": 121.900309, "sa": "11:30–18:30", "su": "11:30–18:30", "area": "頭城", "min": 50}, {"n": "水鹿咖啡親子館（礁溪）", "id": "ChIJASzqDnD6ZzQRLyWiw4khYo0", "r": 4.5, "c": 5152, "lat": 24.812086, "lng": 121.800209, "sa": "公休", "su": "10:00–19:30", "area": "礁溪", "min": 15}, {"n": "Lao Yugang 海鮮（頭城）", "id": "ChIJdz4zFgz3ZzQRtIVkyo9QCLg", "r": 4.6, "c": 3540, "lat": 24.870546, "lng": 121.835787, "sa": "11:00–19:30", "su": "11:00–19:30", "area": "頭城", "min": 30}, {"n": "糧2燒肉 宜蘭旗艦店", "id": "ChIJn3kRl5DlZzQRtgpAG-cWUeM", "r": 4.8, "c": 3453, "lat": 24.747636, "lng": 121.762083, "sa": "11:30–22:00", "su": "11:30–22:00", "area": "宜蘭市", "min": 5}, {"n": "LanPO 餐廳（宜蘭市）", "id": "ChIJuVbscefkZzQR5bb4tCENnT4", "r": 4.3, "c": 2849, "lat": 24.746719, "lng": 121.757224, "sa": "15:30–21:00", "su": "10:00–21:00", "area": "宜蘭市", "min": 5}, {"n": "麵魂家 豚骨拉麵（羅東）", "id": "ChIJS3_u9IfmZzQRamkJbxqhMXY", "r": 4.3, "c": 2791, "lat": 24.673108, "lng": 121.765508, "sa": "11:30–20:20", "su": "11:30–20:20", "area": "羅東", "min": 20}, {"n": "Wa Cow Brunch（礁溪）", "id": "ChIJv3zoZkn6ZzQRTDEuwFdF3z8", "r": 4.5, "c": 2787, "lat": 24.8259, "lng": 121.771045, "sa": "10:00–19:00", "su": "10:00–19:00", "area": "礁溪", "min": 15}, {"n": "蘭陽溪口親子餐廳（五結）", "id": "ChIJ13AOinPvZzQRUzs2Ia0JQ78", "r": 4.7, "c": 2296, "lat": 24.704603, "lng": 121.828608, "sa": "11:00–20:00", "su": "11:00–20:00", "area": "五結", "min": 20}, {"n": "Dragon Phoenix 藥膳燉補（礁溪）", "id": "ChIJP_lDxJz7ZzQR4Sql-gIQCCc", "r": 4.6, "c": 2271, "lat": 24.828768, "lng": 121.771782, "sa": "11:00–20:30", "su": "11:00–20:30", "area": "礁溪", "min": 15}, {"n": "燒肉 Aniki（羅東）", "id": "ChIJ-8IPJCLnZzQRf-sAI6Filnk", "r": 4.4, "c": 2184, "lat": 24.67741, "lng": 121.768459, "sa": "11:00–02:30", "su": "11:00–02:30", "area": "羅東", "min": 15}, {"n": "A volte 義式（冬山）", "id": "ChIJiYq7rIbmZzQRQTjMScPKl4k", "r": 4.6, "c": 1836, "lat": 24.678287, "lng": 121.759998, "sa": "11:30–21:30", "su": "11:30–21:30", "area": "羅東", "min": 15}, {"n": "Woosa 洋食鬆餅（宜蘭市）", "id": "ChIJty4ATinlZzQRhCQOztZ28Ck", "r": 4.8, "c": 1644, "lat": 24.754507, "lng": 121.751329, "sa": "11:00–22:00", "su": "11:00–21:30", "area": "宜蘭市", "min": 5}], "spot": [{"n": "張美阿嬤農場（三星）", "id": "ChIJhfheDgnhZzQRzHYRfqcbt3E", "r": 4.9, "c": 93055, "lat": 24.674867, "lng": 121.675608, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "三星", "min": 25}, {"n": "國立傳統藝術中心", "id": "ChIJjReEGkPvZzQR_8WyhotGs1o", "r": 4.4, "c": 39648, "lat": 24.685587, "lng": 121.824053, "sa": "公休", "su": "09:00–18:00", "area": "五結", "min": 20}, {"n": "星夢森林劇場（冬山）", "id": "ChIJJzGgyiTnZzQR4fR5_SZE1I8", "r": 4.9, "c": 27819, "lat": 24.680763, "lng": 121.739927, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "冬山", "min": 15}, {"n": "羅東林業文化園區", "id": "ChIJMY-Oj9blZzQR-KxtOScEVwc", "r": 4.4, "c": 25292, "lat": 24.681931, "lng": 121.772251, "sa": "08:00–17:00", "su": "08:00–17:00", "area": "羅東", "min": 15}, {"n": "清水地熱", "id": "ChIJVVVVVRVxaDQRDc3Y8MyRVlE", "r": 4.5, "c": 24864, "lat": 24.611809, "lng": 121.636565, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "三星", "min": 40}, {"n": "蘭陽博物館", "id": "ChIJA-31vXL3ZzQRhjLz4ziA8UA", "r": 4.4, "c": 22945, "lat": 24.868656, "lng": 121.832741, "sa": "公休", "su": "09:00–17:00", "area": "頭城", "min": 30}, {"n": "望龍埤（員山）", "id": "ChIJX3qwoUvjZzQRD_TNlJmeDzQ", "r": 4.3, "c": 15027, "lat": 24.7766, "lng": 121.699097, "sa": "08:00–18:00", "su": "08:00–18:00", "area": "員山", "min": 15}, {"n": "冬山河親水公園（五結）", "id": "ChIJ024RSlXvZzQR9_tIyolRXUc", "r": 4.4, "c": 13762, "lat": 24.672994, "lng": 121.815816, "sa": "08:00–17:00", "su": "08:00–17:00", "area": "五結", "min": 20}, {"n": "宜蘭動物王國（壯圍）", "id": "ChIJ94lzKADvZzQRrjCQPLWtMrE", "r": 4.7, "c": 12840, "lat": 24.735294, "lng": 121.811546, "sa": "09:30–17:00", "su": "09:30–17:00", "area": "壯圍", "min": 10}, {"n": "羅東運動公園（落羽松）", "id": "ChIJR_I4YILmZzQRmijPLPyNOug", "r": 4.5, "c": 12102, "lat": 24.682766, "lng": 121.75752, "sa": "全天", "su": "全天", "area": "羅東", "min": 15}, {"n": "樂色山積木王國（室內）", "id": "ChIJkV-R_4jkZzQRfuu-ae2z9Ag", "r": 4.8, "c": 11994, "lat": 24.730677, "lng": 121.774773, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "宜蘭市", "min": 5}, {"n": "心花鹿 Fun 農場（冬山）", "id": "ChIJpXCVcA3nZzQR1zyfvFCudf4", "r": 4.9, "c": 9735, "lat": 24.64465, "lng": 121.729877, "sa": "09:30–17:00", "su": "09:30–17:00", "area": "冬山", "min": 25}, {"n": "北關海潮公園", "id": "ChIJe74Bdp9YXTQRvl8UD2Uhk3k", "r": 4.4, "c": 9732, "lat": 24.912556, "lng": 121.877625, "sa": "全天", "su": "全天", "area": "頭城", "min": 45}, {"n": "南方澳觀景台", "id": "ChIJMYba8knoZzQRGUjgaehywyo", "r": 4.5, "c": 9070, "lat": 24.576508, "lng": 121.86676, "sa": "全天", "su": "全天", "area": "蘇澳", "min": 45}, {"n": "外澳沙灘", "id": "ChIJw4PJsKf3ZzQRAjRUNGhq4nY", "r": 4.4, "c": 8508, "lat": 24.877811, "lng": 121.843071, "sa": "全天", "su": "全天", "area": "頭城", "min": 35}, {"n": "林美石磐步道", "id": "ChIJNdNOwpv7ZzQR6K_ktSipnsY", "r": 4.5, "c": 8470, "lat": 24.822556, "lng": 121.735701, "sa": "全天", "su": "全天", "area": "礁溪", "min": 15}, {"n": "礁溪溫泉公園", "id": "ChIJQwv29kn6ZzQR8ACrvxU8Mh0", "r": 4.3, "c": 8440, "lat": 24.832602, "lng": 121.776678, "sa": "全天", "su": "全天", "area": "礁溪", "min": 20}, {"n": "綠舞日式主題園區", "id": "ChIJpzLU8nrvZzQR278mV9P_44E", "r": 4.6, "c": 5872, "lat": 24.702987, "lng": 121.820743, "sa": "09:00–17:00", "su": "09:00–17:00", "area": "五結", "min": 15}, {"n": "新寮瀑布步道", "id": "ChIJ8fa8A2HnZzQRfd1-P5qPIPQ", "r": 4.4, "c": 4150, "lat": 24.606232, "lng": 121.747017, "sa": "未提供", "su": "未提供", "area": "冬山", "min": 35}, {"n": "梅花湖", "id": "ChIJ7RubbibnZzQRA8A3eSqKblM", "r": 4.4, "c": 3398, "lat": 24.642725, "lng": 121.733083, "sa": "全天", "su": "全天", "area": "冬山", "min": 25}]};
+/* ---------- 初始畫面 ---------- */
 (function(){
-  const list=document.getElementById('pkList'), openOnly=document.getElementById('pkOpen');
-  let cur='snack';
-  const ITIN=new Set(['張美阿嬤農場（三星）','國立傳統藝術中心','羅東林業文化園區','清水地熱','蘭陽博物館','綠舞日式主題園區','礁溪溫泉公園','二鬼麵舖','阿嬤蔥油餅（頭城）','財記臭豆腐（羅東）','財哥古早味龍鳳腿（羅東）']);
-  function navUrl(x){return `https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=${encodeURIComponent(x.n.replace(/（.*?）/g,''))}&destination_place_id=${x.id}`;}
-  function hrs(x){ return x.sa===x.su ? `六日 ${x.sa}` : `六 ${x.sa}｜日 ${x.su}`; }
-  function render(anim){
-    const rows=POCKET[cur].filter(x=>!openOnly.checked || (x.sa!=='公休' && x.su!=='公休'));
-    list.innerHTML=rows.map(x=>{
-      const rank=POCKET[cur].indexOf(x)+1, partial=(x.sa==='公休'||x.su==='公休');
-      return `<div class="card pk${partial?' off':''}">
-        <span class="rk">${rank}</span>
-        <div><div class="nm">${x.n}</div>
-          <div class="meta">
-            <span>★${x.r}・${x.c.toLocaleString()} 則</span>
-            <span class="${partial?'closed':'open'}">${hrs(x)}</span>
-            <span>${x.area}・市區約 ${x.min} 分</span>
-            ${ITIN.has(x.n)?'<span class="in">已在行程</span>':''}
-          </div></div>
-        <a class="pk-go" href="${navUrl(x)}" target="_blank" rel="noopener">導航</a>
-      </div>`;}).join('');
-    if(anim && !reduce.matches){ list.querySelectorAll('.pk').forEach((el,i)=>{el.style.animationDelay=(i*30)+'ms';el.classList.add('pop');}); }
-  }
-  document.querySelectorAll('.pk-tab').forEach(b=>b.addEventListener('click',()=>{
-    document.querySelectorAll('.pk-tab').forEach(t=>t.setAttribute('aria-selected',t===b));
-    cur=b.dataset.k; render(true);
-  }));
-  openOnly.addEventListener('change',()=>render(false));
-  render(false);
+  const now=new Date();
+  if(now>=DAY1 && now<=RETURN){ curDay=Math.min(1,Math.floor((now-DAY1)/86400000)); tabsEl.querySelectorAll('.tab').forEach((t,k)=>t.setAttribute('aria-selected',k===curDay)); }
+  renderDay(false); renderPocket(false); renderNav(); renderSched();
 })();
 
 /* ---------- 待辦清單 ---------- */
@@ -743,8 +904,7 @@ const TODO = [
   ['伴手禮清單','奕順軒、劉鐙徽宜蘭餅都在名單裡']
 ];
 const KEY='yilan2d-trip-todo';
-let done = {};
-try{ done = JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ done = {}; }
+let done = load(KEY, {});
 const check = `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5 L6.5 12 L13 4.5" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 document.getElementById('todoList').innerHTML = TODO.map(([t,s],i)=>`
   <label class="chk"><input type="checkbox" data-i="${i}" ${done[i]?'checked':''}><span class="box">${check}</span>
@@ -755,11 +915,7 @@ function prog(){
   document.getElementById('bar').style.width=(n/boxes.length*100)+'%';
   document.getElementById('progTxt').textContent=`${n} / ${boxes.length}`;
 }
-document.getElementById('todoList').addEventListener('change',e=>{
-  done[e.target.dataset.i]=e.target.checked;
-  try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(err){}
-  prog();
-});
+document.getElementById('todoList').addEventListener('change',e=>{ done[e.target.dataset.i]=e.target.checked; save(KEY,done); prog(); });
 prog();
 
 /* ---------- 住宿 ---------- */
@@ -769,18 +925,16 @@ document.getElementById('stays').innerHTML = `
     <div class="ic" style="background:#B9DAA5">${bedIcon('#F6D27A')}</div>
     <div>
       <h4>綠舞日式主題園區飯店</h4>
-      <p>11/28 – 11/29・1 晚・五結（傳藝中心旁）・Google ★${P.gd.r}</p>
+      <p>11/28 – 11/29・1 晚・五結（傳藝中心旁）・Google ★${HOTEL.r}</p>
       <ul><li class="pill">園區有水豚羊駝</li><li class="pill">天鵝船</li><li class="pill">溫泉浴池</li><li class="pill">隔天走路到傳藝</li></ul>
-      <a class="lnk" href="${gdir(null,'gd')}" target="_blank" rel="noopener">導航到飯店</a>
+      <a class="lnk" href="${gdir(null,HOTEL)}" target="_blank" rel="noopener">導航到飯店</a>
     </div>
   </article>`;
 
 /* ---------- 選單高亮 ---------- */
 const links=[...document.querySelectorAll('.nav a.lk')];
 const io=new IntersectionObserver(es=>{
-  es.forEach(e=>{ if(e.isIntersecting){
-    links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
-  }});
+  es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); } });
 },{rootMargin:'-45% 0px -50% 0px'});
 document.querySelectorAll('main section').forEach(s=>io.observe(s));
 </script>
