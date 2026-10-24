@@ -179,6 +179,8 @@ h2 .dot{width:18px;height:18px;border:var(--line);border-radius:50%;flex:none}
 .cat-b{font-size:.72rem;border:2px solid var(--ink);border-radius:999px;padding:0 7px;background:var(--paper)}
 .warn{color:#3E3A39;background:#F2A497;border:2px solid var(--ink);border-radius:10px;padding:2px 8px;font-size:.82rem;display:inline-block}
 .row-ctl{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;margin-top:8px;padding-top:8px;border-top:2px dashed #d8d2c8;font-size:.82rem}
+.mv{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.mv-lb{width:100%;text-align:right;font-size:.68rem;opacity:.7;letter-spacing:.06em;word-spacing:.55em}
 .row-ctl .stayc{display:inline-flex;align-items:center;gap:6px}
 .row-ctl .stayc b{font-weight:400;font-size:.95rem}
 .ic-btn{font-family:inherit;color:var(--ink);width:30px;height:30px;border:2.5px solid var(--ink);border-radius:50%;background:var(--white);cursor:pointer;font-size:.95rem;line-height:1}
@@ -193,6 +195,16 @@ h2 .dot{width:18px;height:18px;border:var(--line);border-radius:50%;flex:none}
 .pk-btn.seen[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .pk-filters{display:flex;flex-wrap:wrap;gap:4px 16px}
 .pk .pk-go{text-decoration:none;font-size:.8rem;border:2.5px solid var(--ink);border-radius:999px;padding:2px 10px;background:var(--sky);margin-left:auto}
+
+/* ---------- 操作說明 ---------- */
+.help{padding:12px 14px;margin-bottom:14px}
+.help h3{font-weight:400;font-size:1rem;margin-bottom:6px}
+.help ul{list-style:none;display:grid;gap:7px}
+.help li{display:flex;align-items:center;gap:6px;font-size:.88rem;flex-wrap:wrap}
+.help p{font-size:.82rem;margin-top:8px;opacity:.9}
+.help .demo{display:inline-grid;place-items:center;cursor:default;flex:none}
+.help .ic-btn.demo{width:26px;height:26px;font-size:.85rem}
+.help .warn{padding:0 6px}
 
 footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
 
@@ -471,6 +483,19 @@ footer{text-align:center;font-size:.8rem;opacity:.75;padding:30px 0 40px}
 <section id="days">
   <h2><span class="dot" style="background:var(--coral)"></span>我的行程（可編輯）</h2>
   <p class="pk-note">從下方「口袋名單」按「＋D1／＋D2」加點、按「去過」排除；每站可上下移、刪除、調整停留時間，時間、地圖、導航和時間表都會自動重算，並記在這支手機上。</p>
+  <div class="card help">
+    <h3>操作說明</h3>
+    <ul>
+      <li><span class="ic-btn demo">↑</span><span class="ic-btn demo">↓</span>把這一站往前或往後移</li>
+      <li><span class="ic-btn demo">⇄</span>把這一站換到另一天</li>
+      <li><span class="ic-btn demo del">✕</span>從行程刪除這一站</li>
+      <li><span class="ic-btn demo">−</span><span class="ic-btn demo">＋</span>停留時間每次減少或增加 15 分鐘</li>
+      <li><span class="pbtn demo">自動排順序</span>依距離重新排這一天的順序</li>
+      <li><span class="pbtn demo ghost">重設推薦行程</span>兩天都回到預設行程</li>
+      <li><span class="pk-btn demo add">＋D1</span><span class="pk-btn demo">去過</span>在下方口袋名單加點、排除去過的</li>
+    </ul>
+    <p>出現 <span class="warn">⚠</span> 代表到站時間不在營業時間內（第一天看週六、第二天看週日）。所有修改都會存在這支手機上。</p>
+  </div>
   <div class="tabs" role="tablist" aria-label="選擇日期" id="tabs"></div>
   <div class="legend" id="legend" aria-label="交通標籤說明"></div>
   <p class="sr-only" id="planLive" aria-live="polite"></p>
@@ -673,14 +698,14 @@ function renderDay(animate){
         </div>
         <div class="row-ctl">
           <span class="stayc">停留
-            <button type="button" class="ic-btn" data-act="less" data-i="${r.idx}" aria-label="${x.n} 停留減少 15 分">−</button>
+            <button type="button" class="ic-btn" data-act="less" data-i="${r.idx}" title="停留減少 15 分" aria-label="${x.n} 停留減少 15 分">−</button>
             <b>${r.stay}</b> 分
-            <button type="button" class="ic-btn" data-act="more" data-i="${r.idx}" aria-label="${x.n} 停留增加 15 分">＋</button></span>
-          <span class="mv">
-            <button type="button" class="ic-btn" data-act="up" data-i="${r.idx}" aria-label="${x.n} 往前" ${r.idx===0?'disabled':''}>↑</button>
-            <button type="button" class="ic-btn" data-act="down" data-i="${r.idx}" aria-label="${x.n} 往後" ${r.idx===plan.days[di].length-1?'disabled':''}>↓</button>
-            <button type="button" class="ic-btn" data-act="other" data-i="${r.idx}" aria-label="${x.n} 移到另一天">⇄</button>
-            <button type="button" class="ic-btn del" data-act="del" data-i="${r.idx}" aria-label="從行程移除 ${x.n}">✕</button>
+            <button type="button" class="ic-btn" data-act="more" data-i="${r.idx}" title="停留增加 15 分" aria-label="${x.n} 停留增加 15 分">＋</button></span>
+          <span class="mv"><small class="mv-lb">前移 後移 換天 刪除</small>
+            <button type="button" class="ic-btn" data-act="up" data-i="${r.idx}" title="往前移" aria-label="${x.n} 往前" ${r.idx===0?'disabled':''}>↑</button>
+            <button type="button" class="ic-btn" data-act="down" data-i="${r.idx}" title="往後移" aria-label="${x.n} 往後" ${r.idx===plan.days[di].length-1?'disabled':''}>↓</button>
+            <button type="button" class="ic-btn" data-act="other" data-i="${r.idx}" title="換到另一天" aria-label="${x.n} 移到另一天">⇄</button>
+            <button type="button" class="ic-btn del" data-act="del" data-i="${r.idx}" title="刪除" aria-label="從行程移除 ${x.n}">✕</button>
           </span>
         </div>
       </div></div>`;}).join('')}
